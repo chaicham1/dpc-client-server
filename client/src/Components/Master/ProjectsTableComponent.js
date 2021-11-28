@@ -181,7 +181,7 @@ function ProjectsTableComponent() {
           </DialogTitle>
           <DialogActions>
             <Button variant="contained" onClick={handleDeleteDialogClose}>
-              Disagree
+              Cancle
             </Button>
             <Button onClick={handleDeleteDialogCloseAgree} autoFocus>
               Agree
