@@ -1,0 +1,44 @@
+{
+  "name": "amdocs-projects",
+  "version": "1.0.0",
+  "description": "app to create amdocs projects",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "cross-env NODE_ENV=development nodemon app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^4.6.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.1",
+    "express-session": "^1.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0",
+    "package.json": "^2.0.1",
+    "passport": "^0.5.0",
+    "passport-google-oauth20": "^2.0.0",
+    "password-validator": "^5.2.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaicham1/digital-product-catalog-1-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chaicham1/digital-product-catalog-1-backend/issues"
+  },
+  "homepage": "https://github.com/chaicham1/digital-product-catalog-1-backend#readme"
+}

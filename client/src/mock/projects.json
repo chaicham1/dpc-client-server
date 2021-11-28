@@ -1,0 +1,566 @@
+{
+  "projects": [
+    {
+      "_id": "",
+      "name": "vodafone",
+      "imgUrl": "https://static.toiimg.com/photo/59900038.cms",
+      "description": "Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum morbi blandit cursus risus at ultrices. Fermentum posuere urna nec tincidunt praesent. Sed risus ultricies tristique nulla aliquet enim tortor at. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Nibh praesent tristique magna sit amet purus gravida quis. Leo vel orci porta non pulvinar neque laoreet suspendisse. Sagittis aliquam malesuada bibendum arcu vitae elementum. Donec ac odio tempor orci dapibus ultrices in. Urna et pharetra pharetra massa massa. Turpis cursus in hac habitasse platea dictumst quisque sagittis.",
+      "amdocsProducts": [
+        {
+          "imgUrl": "https://harmony-framework.github.io/harmony-boilerplate/images/harmony-logo.png",
+          "title": "Harmony",
+          "description": "Harmony Boilerplate gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, sagas, and more. No config needed."
+        },
+        {
+          "imgUrl": "https://cognis.co.il/wp-content/uploads/2020/08/amdocs-3-768x552.jpg",
+          "title": "amdocs",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        },
+        {
+          "imgUrl": "https://store-images.s-microsoft.com/image/apps.46167.13510798885266905.20cc1336-1464-4b14-b123-bcaa3e65ed2f.12066d18-4493-440e-b6df-502ca9ed9a46?mode=scale&q=90&h=270&w=270&background=%230078D7",
+          "title": "amdocs360",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        }
+      ],
+      "admins": [
+        {
+          "_id": "1",
+          "username": "Nir",
+          "password": "12345678",
+          "isMaster": true
+        }
+      ],
+      "technologies": [
+        {
+          "title": "React",
+          "imgUrl": "https://www.misterbit.co.il/react-workshop/img/reactLogo.png"
+        },
+        {
+          "title": "Redux",
+          "imgUrl": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+        },
+        {
+          "title": "Node.js",
+          "imgUrl": "https://nodejs.org/static/images/logo.svg"
+        },
+        {
+          "title": "mongoDB",
+          "imgUrl": "https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png"
+        }
+      ],
+      "teamMembers": [
+        { "name": "Snir", "role": "SM" },
+        { "name": "Haim", "role": "PM" },
+        { "name": "Chai", "role": "FE" },
+        { "name": "Idan", "role": "BE" },
+        { "name": "Name1", "role": "PO" },
+        { "name": "Name2", "role": "TS" },
+        { "name": "Name3", "role": "" }
+      ],
+      "links": [
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "files": [
+        {
+          "name": "",
+          "downloadUrl": ""
+        }
+      ]
+    },
+    {
+      "_id": "",
+      "name": "Cellcom",
+      "imgUrl": "https://serviced.co.il/wp-content/uploads/2021/06/%D7%9C%D7%95%D7%92%D7%95-%D7%A1%D7%9C%D7%A7%D7%95%D7%9D.jpg",
+      "description": "Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum morbi blandit cursus risus at ultrices. Fermentum posuere urna nec tincidunt praesent. Sed risus ultricies tristique nulla aliquet enim tortor at. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Nibh praesent tristique magna sit amet purus gravida quis. Leo vel orci porta non pulvinar neque laoreet suspendisse. Sagittis aliquam malesuada bibendum arcu vitae elementum. Donec ac odio tempor orci dapibus ultrices in. Urna et pharetra pharetra massa massa. Turpis cursus in hac habitasse platea dictumst quisque sagittis.",
+      "amdocsProducts": [
+        {
+          "imgUrl": "https://harmony-framework.github.io/harmony-boilerplate/images/harmony-logo.png",
+          "title": "Harmony",
+          "description": "Harmony Boilerplate gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, sagas, and more. No config needed."
+        },
+        {
+          "imgUrl": "https://cognis.co.il/wp-content/uploads/2020/08/amdocs-3-768x552.jpg",
+          "title": "amdocs",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        },
+        {
+          "imgUrl": "https://store-images.s-microsoft.com/image/apps.46167.13510798885266905.20cc1336-1464-4b14-b123-bcaa3e65ed2f.12066d18-4493-440e-b6df-502ca9ed9a46?mode=scale&q=90&h=270&w=270&background=%230078D7",
+          "title": "amdocs360",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        }
+      ],
+      "admins": [
+        {
+          "_id": "1",
+          "username": "Nir",
+          "password": "12345678",
+          "isMaster": true
+        }
+      ],
+      "technologies": [
+        {
+          "title": "React",
+          "imgUrl": "https://www.misterbit.co.il/react-workshop/img/reactLogo.png"
+        },
+        {
+          "title": "Redux",
+          "imgUrl": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+        },
+        {
+          "title": "Node.js",
+          "imgUrl": "https://nodejs.org/static/images/logo.svg"
+        },
+        {
+          "title": "mongoDB",
+          "imgUrl": "https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png"
+        }
+      ],
+      "teamMembers": [
+        { "name": "Snir", "role": "SM" },
+        { "name": "Haim", "role": "PM" },
+        { "name": "Chai", "role": "FE" },
+        { "name": "Idan", "role": "BE" },
+        { "name": "Name1", "role": "PO" },
+        { "name": "Name2", "role": "TS" },
+        { "name": "Name3", "role": "" }
+      ],
+      "links": [
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "files": [
+        {
+          "name": "",
+          "downloadUrl": ""
+        }
+      ]
+    },
+    {
+      "_id": "",
+      "name": "Bell.ca",
+      "imgUrl": "https://play-lh.googleusercontent.com/RWg7Q38j0OGEZ2XY8xxnGWBWrSm0GjOL0ZRgQ1U47TnJPtyXyudct2Lm5nlKRUW55g",
+      "description": "Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum morbi blandit cursus risus at ultrices. Fermentum posuere urna nec tincidunt praesent. Sed risus ultricies tristique nulla aliquet enim tortor at. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Nibh praesent tristique magna sit amet purus gravida quis. Leo vel orci porta non pulvinar neque laoreet suspendisse. Sagittis aliquam malesuada bibendum arcu vitae elementum. Donec ac odio tempor orci dapibus ultrices in. Urna et pharetra pharetra massa massa. Turpis cursus in hac habitasse platea dictumst quisque sagittis.",
+      "amdocsProducts": [
+        {
+          "imgUrl": "https://harmony-framework.github.io/harmony-boilerplate/images/harmony-logo.png",
+          "title": "Harmony",
+          "description": "Harmony Boilerplate gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, sagas, and more. No config needed."
+        },
+        {
+          "imgUrl": "https://cognis.co.il/wp-content/uploads/2020/08/amdocs-3-768x552.jpg",
+          "title": "amdocs",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        },
+        {
+          "imgUrl": "https://store-images.s-microsoft.com/image/apps.46167.13510798885266905.20cc1336-1464-4b14-b123-bcaa3e65ed2f.12066d18-4493-440e-b6df-502ca9ed9a46?mode=scale&q=90&h=270&w=270&background=%230078D7",
+          "title": "amdocs360",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        }
+      ],
+      "admins": [
+        {
+          "_id": "1",
+          "username": "Nir",
+          "password": "12345678",
+          "isMaster": true
+        }
+      ],
+      "technologies": [
+        {
+          "title": "React",
+          "imgUrl": "https://www.misterbit.co.il/react-workshop/img/reactLogo.png"
+        },
+        {
+          "title": "Redux",
+          "imgUrl": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+        },
+        {
+          "title": "Node.js",
+          "imgUrl": "https://nodejs.org/static/images/logo.svg"
+        },
+        {
+          "title": "mongoDB",
+          "imgUrl": "https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png"
+        }
+      ],
+      "teamMembers": [
+        { "name": "Snir", "role": "SM" },
+        { "name": "Haim", "role": "PM" },
+        { "name": "Chai", "role": "FE" },
+        { "name": "Idan", "role": "BE" },
+        { "name": "Name1", "role": "PO" },
+        { "name": "Name2", "role": "TS" },
+        { "name": "Name3", "role": "" }
+      ],
+      "links": [
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "files": [
+        {
+          "name": "",
+          "downloadUrl": ""
+        }
+      ]
+    },
+    {
+      "_id": "",
+      "name": "EE",
+      "imgUrl": "https://www.geniyisis.com/wp-content/uploads/2020/02/EE-Logo.jpg",
+      "description": "Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum morbi blandit cursus risus at ultrices. Fermentum posuere urna nec tincidunt praesent. Sed risus ultricies tristique nulla aliquet enim tortor at. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Nibh praesent tristique magna sit amet purus gravida quis. Leo vel orci porta non pulvinar neque laoreet suspendisse. Sagittis aliquam malesuada bibendum arcu vitae elementum. Donec ac odio tempor orci dapibus ultrices in. Urna et pharetra pharetra massa massa. Turpis cursus in hac habitasse platea dictumst quisque sagittis.",
+
+      "amdocsProducts": [
+        {
+          "imgUrl": "https://harmony-framework.github.io/harmony-boilerplate/images/harmony-logo.png",
+          "title": "Harmony",
+          "description": "Harmony Boilerplate gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, sagas, and more. No config needed."
+        },
+        {
+          "imgUrl": "https://cognis.co.il/wp-content/uploads/2020/08/amdocs-3-768x552.jpg",
+          "title": "amdocs",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        },
+        {
+          "imgUrl": "https://store-images.s-microsoft.com/image/apps.46167.13510798885266905.20cc1336-1464-4b14-b123-bcaa3e65ed2f.12066d18-4493-440e-b6df-502ca9ed9a46?mode=scale&q=90&h=270&w=270&background=%230078D7",
+          "title": "amdocs360",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        }
+      ],
+      "admins": [
+        {
+          "_id": "1",
+          "username": "Nir",
+          "password": "12345678",
+          "isMaster": true
+        }
+      ],
+      "technologies": [
+        {
+          "title": "React",
+          "imgUrl": "https://www.misterbit.co.il/react-workshop/img/reactLogo.png"
+        },
+        {
+          "title": "Redux",
+          "imgUrl": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+        },
+        {
+          "title": "Node.js",
+          "imgUrl": "https://nodejs.org/static/images/logo.svg"
+        },
+        {
+          "title": "mongoDB",
+          "imgUrl": "https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png"
+        }
+      ],
+      "teamMembers": [
+        { "name": "Snir", "role": "SM" },
+        { "name": "Haim", "role": "PM" },
+        { "name": "Chai", "role": "FE" },
+        { "name": "Idan", "role": "BE" },
+        { "name": "Name1", "role": "PO" },
+        { "name": "Name2", "role": "TS" },
+        { "name": "Name3", "role": "" }
+      ],
+      "links": [
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "files": [
+        {
+          "name": "",
+          "downloadUrl": ""
+        }
+      ]
+    },
+    {
+      "_id": "",
+      "name": "3UK",
+      "imgUrl": "https://yt3.ggpht.com/VMKRELlbcOY20-day79R9649AzapffE9ZUAVCBQ143yDTahn1c4SOKBF7cRf15muRF58S60irA=s900-c-k-c0x00ffffff-no-rj",
+      "description": "Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum morbi blandit cursus risus at ultrices. Fermentum posuere urna nec tincidunt praesent. Sed risus ultricies tristique nulla aliquet enim tortor at. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Nibh praesent tristique magna sit amet purus gravida quis. Leo vel orci porta non pulvinar neque laoreet suspendisse. Sagittis aliquam malesuada bibendum arcu vitae elementum. Donec ac odio tempor orci dapibus ultrices in. Urna et pharetra pharetra massa massa. Turpis cursus in hac habitasse platea dictumst quisque sagittis.",
+      "amdocsProducts": [
+        {
+          "imgUrl": "https://harmony-framework.github.io/harmony-boilerplate/images/harmony-logo.png",
+          "title": "Harmony",
+          "description": "Harmony Boilerplate gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, sagas, and more. No config needed."
+        },
+        {
+          "imgUrl": "https://cognis.co.il/wp-content/uploads/2020/08/amdocs-3-768x552.jpg",
+          "title": "amdocs",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        },
+        {
+          "imgUrl": "https://store-images.s-microsoft.com/image/apps.46167.13510798885266905.20cc1336-1464-4b14-b123-bcaa3e65ed2f.12066d18-4493-440e-b6df-502ca9ed9a46?mode=scale&q=90&h=270&w=270&background=%230078D7",
+          "title": "amdocs360",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        }
+      ],
+      "admins": [
+        {
+          "_id": "1",
+          "username": "Nir",
+          "password": "12345678",
+          "isMaster": true
+        }
+      ],
+      "technologies": [
+        {
+          "title": "React",
+          "imgUrl": "https://www.misterbit.co.il/react-workshop/img/reactLogo.png"
+        },
+        {
+          "title": "Redux",
+          "imgUrl": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+        },
+        {
+          "title": "Node.js",
+          "imgUrl": "https://nodejs.org/static/images/logo.svg"
+        },
+        {
+          "title": "mongoDB",
+          "imgUrl": "https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png"
+        }
+      ],
+      "teamMembers": [
+        { "name": "Snir", "role": "SM" },
+        { "name": "Haim", "role": "PM" },
+        { "name": "Chai", "role": "FE" },
+        { "name": "Idan", "role": "BE" },
+        { "name": "Name1", "role": "PO" },
+        { "name": "Name2", "role": "TS" },
+        { "name": "Name3", "role": "" }
+      ],
+      "links": [
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "files": [
+        {
+          "name": "",
+          "downloadUrl": ""
+        }
+      ]
+    },
+    {
+      "_id": "",
+      "name": "T-Mobile",
+      "imgUrl": "https://www.t-mobile.com/news/_admin/uploads/2020/06/T-Mobile_New_Logo_Primary_RGB_M-on-W.jpg",
+      "description": "Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum morbi blandit cursus risus at ultrices. Fermentum posuere urna nec tincidunt praesent. Sed risus ultricies tristique nulla aliquet enim tortor at. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Nibh praesent tristique magna sit amet purus gravida quis. Leo vel orci porta non pulvinar neque laoreet suspendisse. Sagittis aliquam malesuada bibendum arcu vitae elementum. Donec ac odio tempor orci dapibus ultrices in. Urna et pharetra pharetra massa massa. Turpis cursus in hac habitasse platea dictumst quisque sagittis.",
+      "amdocsProducts": [
+        {
+          "imgUrl": "https://harmony-framework.github.io/harmony-boilerplate/images/harmony-logo.png",
+          "title": "Harmony",
+          "description": "Harmony Boilerplate gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, sagas, and more. No config needed."
+        },
+        {
+          "imgUrl": "https://cognis.co.il/wp-content/uploads/2020/08/amdocs-3-768x552.jpg",
+          "title": "amdocs",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        },
+        {
+          "imgUrl": "https://store-images.s-microsoft.com/image/apps.46167.13510798885266905.20cc1336-1464-4b14-b123-bcaa3e65ed2f.12066d18-4493-440e-b6df-502ca9ed9a46?mode=scale&q=90&h=270&w=270&background=%230078D7",
+          "title": "amdocs360",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        }
+      ],
+      "admins": [
+        {
+          "_id": "1",
+          "username": "Nir",
+          "password": "12345678",
+          "isMaster": true
+        }
+      ],
+      "technologies": [
+        {
+          "title": "React",
+          "imgUrl": "https://www.misterbit.co.il/react-workshop/img/reactLogo.png"
+        },
+        {
+          "title": "Redux",
+          "imgUrl": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+        },
+        {
+          "title": "Node.js",
+          "imgUrl": "https://nodejs.org/static/images/logo.svg"
+        },
+        {
+          "title": "mongoDB",
+          "imgUrl": "https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png"
+        }
+      ],
+      "teamMembers": [
+        { "name": "Snir", "role": "SM" },
+        { "name": "Haim", "role": "PM" },
+        { "name": "Chai", "role": "FE" },
+        { "name": "Idan", "role": "BE" },
+        { "name": "Name1", "role": "PO" },
+        { "name": "Name2", "role": "TS" },
+        { "name": "Name3", "role": "" }
+      ],
+      "links": [
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "files": [
+        {
+          "name": "",
+          "downloadUrl": ""
+        }
+      ]
+    },
+    {
+      "_id": "",
+      "name": "AT&T",
+      "imgUrl": "data:image/png;base64,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",
+      "description": "Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum morbi blandit cursus risus at ultrices. Fermentum posuere urna nec tincidunt praesent. Sed risus ultricies tristique nulla aliquet enim tortor at. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Nibh praesent tristique magna sit amet purus gravida quis. Leo vel orci porta non pulvinar neque laoreet suspendisse. Sagittis aliquam malesuada bibendum arcu vitae elementum. Donec ac odio tempor orci dapibus ultrices in. Urna et pharetra pharetra massa massa. Turpis cursus in hac habitasse platea dictumst quisque sagittis.",
+
+      "amdocsProducts": [
+        {
+          "imgUrl": "https://harmony-framework.github.io/harmony-boilerplate/images/harmony-logo.png",
+          "title": "Harmony",
+          "description": "Harmony Boilerplate gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, sagas, and more. No config needed."
+        },
+        {
+          "imgUrl": "https://cognis.co.il/wp-content/uploads/2020/08/amdocs-3-768x552.jpg",
+          "title": "amdocs",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        },
+        {
+          "imgUrl": "https://store-images.s-microsoft.com/image/apps.46167.13510798885266905.20cc1336-1464-4b14-b123-bcaa3e65ed2f.12066d18-4493-440e-b6df-502ca9ed9a46?mode=scale&q=90&h=270&w=270&background=%230078D7",
+          "title": "amdocs360",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        }
+      ],
+      "admins": [
+        {
+          "_id": "1",
+          "username": "Nir",
+          "password": "12345678",
+          "isMaster": true
+        }
+      ],
+      "technologies": [
+        {
+          "title": "React",
+          "imgUrl": "https://www.misterbit.co.il/react-workshop/img/reactLogo.png"
+        },
+        {
+          "title": "Redux",
+          "imgUrl": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+        },
+        {
+          "title": "Node.js",
+          "imgUrl": "https://nodejs.org/static/images/logo.svg"
+        },
+        {
+          "title": "mongoDB",
+          "imgUrl": "https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png"
+        }
+      ],
+      "teamMembers": [
+        { "name": "Snir", "role": "SM" },
+        { "name": "Haim", "role": "PM" },
+        { "name": "Chai", "role": "FE" },
+        { "name": "Idan", "role": "BE" },
+        { "name": "Name1", "role": "PO" },
+        { "name": "Name2", "role": "TS" },
+        { "name": "Name3", "role": "" }
+      ],
+      "links": [
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "files": [
+        {
+          "name": "",
+          "downloadUrl": ""
+        }
+      ]
+    },
+    {
+      "_id": "",
+      "name": "3IR",
+      "imgUrl": "data:image/jpeg;base64,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",
+      "description": "Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Vestibulum morbi blandit cursus risus at ultrices. Fermentum posuere urna nec tincidunt praesent. Sed risus ultricies tristique nulla aliquet enim tortor at. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Nibh praesent tristique magna sit amet purus gravida quis. Leo vel orci porta non pulvinar neque laoreet suspendisse. Sagittis aliquam malesuada bibendum arcu vitae elementum. Donec ac odio tempor orci dapibus ultrices in. Urna et pharetra pharetra massa massa. Turpis cursus in hac habitasse platea dictumst quisque sagittis.",
+      "amdocsProducts": [
+        {
+          "imgUrl": "https://harmony-framework.github.io/harmony-boilerplate/images/harmony-logo.png",
+          "title": "Harmony",
+          "description": "Harmony Boilerplate gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, sagas, and more. No config needed."
+        },
+        {
+          "imgUrl": "https://cognis.co.il/wp-content/uploads/2020/08/amdocs-3-768x552.jpg",
+          "title": "amdocs",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        },
+        {
+          "imgUrl": "https://store-images.s-microsoft.com/image/apps.46167.13510798885266905.20cc1336-1464-4b14-b123-bcaa3e65ed2f.12066d18-4493-440e-b6df-502ca9ed9a46?mode=scale&q=90&h=270&w=270&background=%230078D7",
+          "title": "amdocs360",
+          "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+        }
+      ],
+      "admins": [
+        {
+          "_id": "1",
+          "username": "Nir",
+          "password": "12345678",
+          "isMaster": true
+        }
+      ],
+      "technologies": [
+        {
+          "title": "React",
+          "imgUrl": "https://www.misterbit.co.il/react-workshop/img/reactLogo.png"
+        },
+        {
+          "title": "Redux",
+          "imgUrl": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+        },
+        {
+          "title": "Node.js",
+          "imgUrl": "https://nodejs.org/static/images/logo.svg"
+        },
+        {
+          "title": "mongoDB",
+          "imgUrl": "https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png"
+        }
+      ],
+      "teamMembers": [
+        { "name": "Snir", "role": "SM" },
+        { "name": "Haim", "role": "PM" },
+        { "name": "Chai", "role": "FE" },
+        { "name": "Idan", "role": "BE" },
+        { "name": "Name1", "role": "PO" },
+        { "name": "Name2", "role": "TS" },
+        { "name": "Name3", "role": "" }
+      ],
+      "links": [
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "files": [
+        {
+          "name": "",
+          "downloadUrl": ""
+        }
+      ]
+    }
+  ]
+}

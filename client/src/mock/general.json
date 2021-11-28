@@ -1,0 +1,53 @@
+{
+  "amdocsProductsList": [
+    {
+      "imgUrl": "https://harmony-framework.github.io/harmony-boilerplate/images/harmony-logo.png",
+      "title": "Harmony",
+      "description": "Harmony Boilerplate gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, sagas, and more. No config needed."
+    },
+    {
+      "imgUrl": "https://cognis.co.il/wp-content/uploads/2020/08/amdocs-3-768x552.jpg",
+      "title": "amdocs",
+      "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+    },
+    {
+      "imgUrl": "https://store-images.s-microsoft.com/image/apps.46167.13510798885266905.20cc1336-1464-4b14-b123-bcaa3e65ed2f.12066d18-4493-440e-b6df-502ca9ed9a46?mode=scale&q=90&h=270&w=270&background=%230078D7",
+      "title": "amdocs360",
+      "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
+    }
+  ],
+
+  "developmentTechnologiesList": [
+    {
+      "title": "React",
+      "imgUrl": "https://www.misterbit.co.il/react-workshop/img/reactLogo.png"
+    },
+    {
+      "title": "Redux",
+      "imgUrl": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+    },
+    {
+      "title": "Node.js",
+      "imgUrl": "https://nodejs.org/static/images/logo.svg"
+    },
+    {
+      "title": "mongoDB",
+      "imgUrl": "https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png"
+    }
+  ],
+
+  "admins": [
+    {
+      "_id": "1",
+      "username": "Nir",
+      "password": "12345678",
+      "isMaster": true
+    },
+    {
+      "_id": "2",
+      "username": "test",
+      "password": "12345678",
+      "isMaster": false
+    }
+  ]
+}
