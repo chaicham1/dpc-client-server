@@ -2,6 +2,11 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const userDB = require('../../mongoDB/CRUD/usersDB');
 const Validator = require('../../mongoDB/CRUD/Validator');
+// import * as statusCodeDefinitions from "../../definitions/status-code-definition";
+import * as statusCodeDef from "../../definitions/status-code-definition";
+import * as messagesDef from"../../definitions/messages-definition";
+import * as jwtConfig from "../../config/jwtConfig";
+
 JWT_KEY = "dkfmsdlmlsmflsmflmslmflsmflmslfmsdlmfldsmf"
 
 /**checked */
@@ -12,8 +17,8 @@ exports.login = async(req,res,next)=>{
         Validator.loginValidator(user);
         bcrypt.compare(req.body.password,user._doc.password,(err,result)=>{
             if(err){
-                return res.status(401).json({
-                    error: 'Auth failed'
+                return res.status(statusCodeDef.UNAUTHORIZED_STATUS_CODE).json({
+                    error:messagesDef.UNAUTHORIZED_MESSAGE
                 });
             }
             if(result){
@@ -21,19 +26,20 @@ exports.login = async(req,res,next)=>{
                     userName:user._doc.user,
                     role:user._doc.role,
                 }, JWT_KEY,{
-                    expiresIn: "10h"
+                    expiresIn: jwtConfig.JWT_TOKEN_EXPIRATION_TIME
                 });
-                return res.status(200).json({
-                    message:'Login successful',
+                return res.status(statusCodeDef.SUCCESS_STATUS_CODE).json({
+                    message:messagesDef.LOGIN_SUCCESSFUL,
                     token:token
                 });
             }
-            return res.status(401).json({
-                error: 'Auth failed'
+            console.log("UNAUTHORIZED_STATUS_CODE: ", statusCodeDef.UNAUTHORIZED_STATUS_CODE);
+            return res.status(statusCodeDef.UNAUTHORIZED_STATUS_CODE).json({
+                error: messagesDef.UNAUTHORIZED_MESSAGE
             });
         });
     }catch(err){
-        return res.status(401).json({
+        return res.status(statusCodeDef.UNAUTHORIZED_STATUS_CODE).json({
             error: err
         });
     }  

@@ -7,12 +7,12 @@ module.exports = {
     managerAuthorization: (req,res,next) => {
         try{
             if(req.userData.role !== 'manager'){
-                throw Error("No permission");
+                throw Error(NO_PERMISSION_MESSAGE);
             }
             next();
         }catch(error){
-            return res.status(500).json({
-                message: 'Auth failed'
+            return res.status(SERVER_ERROR_STATUS_CODE).json({
+                message: UNAUTHORIZED_MESSAGE
             });
         }
     },
@@ -24,8 +24,8 @@ module.exports = {
             req.userData = decoded;
             next();
         }catch(error){
-            return res.status(401).json({
-                message: 'Auth failed'
+            return res.status(UNAUTHORIZED_STATUS_CODE).json({
+                message: UNAUTHORIZED_MESSAGE
             });
         }
     },

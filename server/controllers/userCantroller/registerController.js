@@ -27,11 +27,11 @@ exports.register = async(req,res,next)=>{
     try{
         tmpBody = req.body;
         await Validator.registrationValidator(tmpBody);
-        bcrypt.hash(tmpBody.password,10,async(err,hash)=>{
+        bcrypt.hash(tmpBody.password,10,async(err,hash)=>{ // todo second arg as const variable
             try{
-                if(tmpBody.role === 'manager' || tmpBody.role === 'participant')
+                if(tmpBody.role === 'manager' || tmpBody.role === 'participant')// todo create role enum and do check with enum value
                 res.status(200).send(await insertNewUser(tmpBody,hash));
-                else throw new Error("Not a legal user role");
+                else throw new Error(NOT_LEGAL_USER_ROLE_MESSAGE);
             }catch(err){
                 return res.status(500).json({
                     error: err.message    

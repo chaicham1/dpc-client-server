@@ -2,13 +2,13 @@ module.exports = {
 
     auth : async(req,res,next)=>{
         try{
-            return res.status(200).json({
+            return res.status(SUCCESS_STATUS_CODE).json({
                 role:req.userData.role,
-                massage: "Auth Success",
+                massage: AUTH_SUCCEEDED_MESSAGE,
             });
         }catch(err){
-            return res.status(401).json({
-                massage: "Failed"
+            return res.status(UNAUTHORIZED_STATUS_CODE).json({
+                massage: OPERATION_FAILED_MESSAGE
             });
         }
     },

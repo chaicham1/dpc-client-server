@@ -1,0 +1,1 @@
+const JWT_TOKEN_EXPIRATION_TIME = "10h";
