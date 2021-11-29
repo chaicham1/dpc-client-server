@@ -2,10 +2,9 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const userDB = require('../../mongoDB/CRUD/usersDB');
 const Validator = require('../../mongoDB/CRUD/Validator');
-// import * as statusCodeDefinitions from "../../definitions/status-code-definition";
-import * as statusCodeDef from "../../definitions/status-code-definition";
-import * as messagesDef from"../../definitions/messages-definition";
-import * as jwtConfig from "../../config/jwtConfig";
+const statusCodeDef = require('../../definitions/status-code-definition');
+const messagesDef = require('../../definitions/messages-definition');
+const jwtConfig = require('../../config/jwtConfig');
 
 JWT_KEY = "dkfmsdlmlsmflsmflmslmflsmflmslfmsdlmfldsmf"
 
