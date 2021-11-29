@@ -20,5 +20,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: docker build nodejs
       run: |
-        docker build ./nodejs idanovadia/amdocs_showproj_be:1.0.0
+        docker build ./server idanovadia/amdocs_showproj_be:1.0.0
 
