@@ -8,25 +8,25 @@ exports.updatePassword = async(req,res,next)=>{
         var myUser = await userDB.getUser(req.userData.userName);
         bcrypt.compare(req.body.oldPassword,myUser._doc.password,(err,result)=>{
             if(err){
-                return res.status(401).json({
-                    message: 'Update has been failed'
+                return res.status(UNAUTHORIZED_STATUS_CODE).json({
+                    message: UPDATE_FAILED_MESSAGE
                 });
             }
             if(result){
                 return bcrypt.hash(req.body.newPassword,10,async(err,hash)=>{
                         await userDB.updateUserPassword(req.body.user,hash);
-                        return res.status(200).json({
-                            message:'Update has been succeeded',
+                        return res.status(SUCCESS_STATUS_CODE).json({
+                            message: UPDATE_SUCCEEDED_MESSAGE,
                         });
                 });
             }
-            return res.status(401).json({
-                message: 'Update has been failed'
+            return res.status(UNAUTHORIZED_STATUS_CODE).json({
+                message: UPDATE_FAILED_MESSAGE
             });
         }); 
     }catch(err){
-        return res.status(401).json({
-            message: 'Update has been failed'
+        return res.status(UNAUTHORIZED_STATUS_CODE).json({
+            message: UPDATE_FAILED_MESSAGE
         });
     }
     
