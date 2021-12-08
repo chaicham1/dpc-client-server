@@ -19,7 +19,7 @@ function ProjectCardComponent({ name, imgUrl, description }) {
       >
         <CardMedia component="img" height="150" image={imgUrl} alt={name} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" textAlign="center">
+          <Typography sx={{ fontSize: { xs: 16, sm: 20 } }} component="div" textAlign="center">
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary" textAlign="center">
