@@ -5,7 +5,7 @@ import { Grid, Container, Box } from '@mui/material'
 import ProjectCardComponent from '../Components/ProjectCardComponent'
 
 import PageLoader from '../Components/Common/PageLoader'
-import HeaderComponent from '../Components/HeaderComponent'
+import HeaderWithHamburgerComponent from '../Components/HeaderWithHamburgerComponent'
 
 function ProjectsCatalogPage({ themeSwitchHandler, isDarkTheme }) {
   const projects = useSelector((state) => state.projects)
@@ -36,20 +36,20 @@ function ProjectsCatalogPage({ themeSwitchHandler, isDarkTheme }) {
         <PageLoader />
       ) : (
         <>
-          <HeaderComponent
+          <HeaderWithHamburgerComponent
             projects={projects}
             searchHandler={changeCurrentProjectOnSearch}
             themeSwitchHandler={themeSwitchHandler}
             isDarkTheme={isDarkTheme}
           />
           <Container>
-            <Box mt={5} mb={0}>
+            <Box pt={5} mb={0}>
               <Grid container spacing={2} justifyContent="center">
                 {projects &&
                   !searchProject &&
                   projects.map((project) => {
                     return (
-                      <Grid item xs={12} sm={4} md={3} key={project.name}>
+                      <Grid item xs={6} sm={4} md={3} key={project.name}>
                         <ProjectCardComponent
                           imgUrl={project.imgUrl}
                           description={project.description}
@@ -59,7 +59,7 @@ function ProjectsCatalogPage({ themeSwitchHandler, isDarkTheme }) {
                     )
                   })}
                 {searchProject && (
-                  <Grid item xs={12} sm={6} md={3}>
+                  <Grid item xs={6} sm={6} md={3}>
                     <ProjectCardComponent
                       imgUrl={searchProject.imgUrl}
                       description={searchProject.description}
