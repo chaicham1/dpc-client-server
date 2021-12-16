@@ -2,13 +2,13 @@ const ProjectDetails = require('../Schemas/projectDetailsSchema');
 
 module.exports = {
 
-    saveProject: async(projectDetailsObj) => {
-
-        const project = new ProjectDetails(projectDetailsObj);
-        project.save().then((result) =>{
-            return result;
-        }).catch((err) =>{
-            console.log(err);
-        });
+    saveProject: async(projectDetailsObj) => {       
+        try{
+            const project = new ProjectDetails(projectDetailsObj);
+            await project.save()
+        } catch(error){
+            throw new Error("Something goes wrong, Please try again later");
+        }
+        
     }
 }
