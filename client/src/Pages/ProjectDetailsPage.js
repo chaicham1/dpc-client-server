@@ -32,7 +32,7 @@ function ProjectDetailsPage() {
   }, [])
 
   useEffect(() => {
-    if (projects.length) {
+    if (projects.length > 0) {
       setLoading(false)
     }
   }, [projects])

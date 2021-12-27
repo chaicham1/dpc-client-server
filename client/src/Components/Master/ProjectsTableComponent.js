@@ -26,6 +26,7 @@ import AddBoxTwoToneIcon from '@mui/icons-material/AddBoxTwoTone'
 
 import Loader from '../Common/Loader'
 import CreateNewProjectComponent from './CreateNewProjectComponent'
+import Warning from '../Common/Warning'
 
 function ProjectsTableComponent() {
   const projects = useSelector((state) => state.projects)
@@ -42,14 +43,14 @@ function ProjectsTableComponent() {
   const [rowsPerPage, setRowsPerPage] = useState(5)
 
   useEffect(() => {
-    if (projects.length) {
+    if (projects.length > 0) {
       setLoading(false)
     }
   }, [projects])
 
   const addProjectHandler = (newProject) => {
     console.log(newProject)
-    handleCreateProjectClose()
+    // handleCreateProjectClose()
   }
 
   const handleCreateProjectOpen = () => {
@@ -177,7 +178,9 @@ function ProjectsTableComponent() {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            Are you sure you want to delete {currentProjectToDelete.name.toUpperCase()}?
+            <Warning
+              message={`Are you sure you want to delete ${currentProjectToDelete.name.toUpperCase()}?`}
+            />
           </DialogTitle>
           <DialogActions>
             <Button variant="contained" onClick={handleDeleteDialogClose}>

@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import BasicPageTamplate from '../Components/Common/BasicPageTamplate'
 
 import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone'
@@ -12,10 +12,13 @@ function AdminPage() {
   //1-fetch admins after authentication, and show them in table
   //2-add user genarater
   //3-add create new project functionlaity
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <BasicPageTamplate>
-      <Grid container spacing={5} justifyContent="center" textAlign="center">
+      <Grid container spacing={5} pt={3} justifyContent="center" textAlign="center">
         <Grid xs={12} item container justifyContent="center">
           <AdminPanelSettingsTwoToneIcon color="primary" fontSize="large" />
           <Typography variant="h4" component="div">

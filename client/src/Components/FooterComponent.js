@@ -22,7 +22,8 @@ function FooterComponent() {
         bottom: 0,
         minHeight: '200px',
       }}
-    ><Lottie options={wavesBackgroundOptions} height={400} />
+    >
+      <Lottie options={wavesBackgroundOptions} height={400} />
       <Typography
         gutterBottom
         variant="p"
@@ -38,8 +39,8 @@ function FooterComponent() {
           color: 'white',
         }}
       >
-        Made with <FavoriteRoundedIcon style={{ color: 'red', fontSize: '14px' }} /> by Chai,
-        Daniel, and Idan
+        Made with <FavoriteRoundedIcon style={{ color: 'red', fontSize: '14px' }} /> by Chai, Idan,
+        and Daniel
       </Typography>
     </div>
   )

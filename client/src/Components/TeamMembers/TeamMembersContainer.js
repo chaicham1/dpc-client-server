@@ -3,13 +3,12 @@ import { Grid, Typography } from '@mui/material'
 import TeamMemberComponent from './TeamMemberComponent'
 
 function TeamMembersContainer({ teamMembers }) {
-  console.log(teamMembers)
   return (
     <Grid item container direction="column" alignItems="flex-start">
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Team Members
       </Typography>
-      {teamMembers.length && (
+      {teamMembers.length > 0 && (
         <Grid container spacing={0}>
           {teamMembers.map((tm) => {
             return (

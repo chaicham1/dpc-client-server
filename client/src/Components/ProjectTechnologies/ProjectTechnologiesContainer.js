@@ -9,7 +9,7 @@ function ProjectTechnologiesContainer({ technologies }) {
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Technologies
       </Typography>
-      {technologies.length && (
+      {technologies.length > 0 && (
         <Grid container spacing={0}>
           {technologies.map((t) => {
             return (

@@ -10,7 +10,7 @@ function AmdocsPoductContainer({ amdocsProducts }) {
         Amdocs Poducts
       </Typography>
 
-      {amdocsProducts.length && (
+      {amdocsProducts.length > 0 && (
         <List>
           {amdocsProducts.map((ap) => {
             return (

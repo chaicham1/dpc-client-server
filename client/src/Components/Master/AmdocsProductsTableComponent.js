@@ -39,7 +39,7 @@ function AmdocsProductsTableComponent() {
   }
 
   useEffect(() => {
-    if (amdocsProductsList.length) {
+    if (amdocsProductsList.length > 0) {
       setLoading(false)
     }
   }, [amdocsProductsList])

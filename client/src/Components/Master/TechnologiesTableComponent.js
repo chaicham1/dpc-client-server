@@ -39,7 +39,7 @@ function TechnologiesTableComponent() {
   }
 
   useEffect(() => {
-    if (developmentTechnologiesList.length) {
+    if (developmentTechnologiesList.length > 0) {
       setLoading(false)
     }
   }, [developmentTechnologiesList])

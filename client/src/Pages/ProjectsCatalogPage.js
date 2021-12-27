@@ -14,7 +14,7 @@ function ProjectsCatalogPage({ themeSwitchHandler, isDarkTheme }) {
   const [searchProject, setSearchProject] = useState(null)
 
   useEffect(() => {
-    if (projects.length) {
+    if (projects.length > 0) {
       setLoading(false)
     }
   }, [projects])
