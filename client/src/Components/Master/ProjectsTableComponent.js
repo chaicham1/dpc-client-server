@@ -19,6 +19,10 @@ import {
   Dialog,
   DialogTitle,
   DialogActions,
+  Alert,
+  AlertTitle,
+  Stack,
+  Grid,
 } from '@mui/material'
 
 import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone'
@@ -38,6 +42,7 @@ function ProjectsTableComponent() {
 
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false)
   const [currentProjectToDelete, setcurrentProjectToDelete] = useState(null)
+  const [showCreateNewProjectSuccessMessage, setCreateNewProjectSuccessMessage] = useState(false)
 
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(5)
@@ -50,7 +55,8 @@ function ProjectsTableComponent() {
 
   const addProjectHandler = (newProject) => {
     console.log(newProject)
-    // handleCreateProjectClose()
+    handleCreateProjectClose()
+    setCreateNewProjectSuccessMessage(true)
   }
 
   const handleCreateProjectOpen = () => {
@@ -124,6 +130,20 @@ function ProjectsTableComponent() {
     <Loader />
   ) : (
     <>
+      {showCreateNewProjectSuccessMessage && (
+        <Grid xs={12} item container justifyContent="center">
+          <Alert
+            severity="success"
+            sx={{ width: '100%', textAlign: 'left' }}
+            onClose={() => {
+              setCreateNewProjectSuccessMessage(false)
+            }}
+          >
+            <AlertTitle>Success</AlertTitle>
+            New Project Created Succesfully
+          </Alert>
+        </Grid>
+      )}
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Projects
       </Typography>

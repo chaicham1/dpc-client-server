@@ -20,11 +20,16 @@ import {
   MenuItem,
   InputLabel,
   FormControl,
+  IconButton,
 } from '@mui/material'
+
+import CloseIcon from '@mui/icons-material/Close'
+import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone'
 
 import AmdocsPoductComponent from '../AmdoctProduct/AmdocsPoductComponent'
 import ProjectTechnologieComponent from '../ProjectTechnologies/ProjectTechnologieComponent'
 import TeamMembersContainer from '../TeamMembers/TeamMembersContainer'
+import TeamMemberComponent from '../TeamMembers/TeamMemberComponent'
 
 function CreateNewProjectComponent({
   addProjectHandler,
@@ -44,6 +49,7 @@ function CreateNewProjectComponent({
   const [newTeamMemberRole, setNewTeamMemberRole] = useState('')
   const [newTeamMembers, setNewTeamMembers] = useState([])
 
+  //Handle Project basic info
   function newProjectNameHandler(e) {
     setNewProjectName(e.target.value)
   }
@@ -56,6 +62,7 @@ function CreateNewProjectComponent({
     setNewDescription(e.target.value)
   }
 
+  //Handle Amdocs Products related to the project
   function newProjectAmdocsProductsHandler(checked, amdocsProduct) {
     if (checked) {
       setNewAmdocsProducts((prevArray) => [...prevArray, amdocsProduct])
@@ -68,6 +75,7 @@ function CreateNewProjectComponent({
     }
   }
 
+  //Handle Project Technologies
   function newProjectTechnologiesHandler(checked, Technologie) {
     if (checked) {
       setNewTechnologies((prevArray) => [...prevArray, Technologie])
@@ -80,12 +88,15 @@ function CreateNewProjectComponent({
     }
   }
 
+  //Handle Team Members
   function newProjectTeamMemberNameHandler(e) {
     setNewTeamMemberName(e.target.value)
   }
+
   function newProjectTeamMemberRoleHandler(e) {
     setNewTeamMemberRole(e.target.value)
   }
+
   function newProjectTeamMembersHandler() {
     if (newTeamMemberName && newTeamMemberRole) {
       setNewTeamMembers((prevArray) => [
@@ -97,9 +108,28 @@ function CreateNewProjectComponent({
     }
   }
 
-  function newProjectSubmitFormHandler() {
+  function newProjectTeamMembersDeleteHandler(teamMember) {
+    setNewTeamMembers((prevArray) => [
+      ...prevArray.filter((tm) => {
+        return tm.name !== teamMember.name
+      }),
+    ])
+  }
+
+  //Handle SUBMIT of new project
+  function newProjectSubmitFormHandler(e) {
+    e.preventDefault()
     console.log('submit new project')
-    addProjectHandler()
+    const newProject = {
+      name: newProjectName,
+      imgUrl: newImageUrl,
+      description: newDescription,
+      amdocsProducts: newAmdocsProducts,
+      technologies: newTechnologies,
+      teamMembers: newTeamMembers,
+    }
+    addProjectHandler(newProject)
+    //add success message when submitted
   }
 
   // console.log({
@@ -144,13 +174,17 @@ function CreateNewProjectComponent({
       >
         <DialogTitle id="scroll-dialog-title">
           New Project
-          <Button
+          <IconButton
+            aria-label="close"
             onClick={handleCreateProjectClose}
-            size="small"
-            sx={{ right: 5, position: 'absolute' }}
+            sx={{
+              position: 'absolute',
+              right: 10,
+              top: 10,
+            }}
           >
-            X
-          </Button>
+            <CloseIcon />
+          </IconButton>
         </DialogTitle>
         <DialogContent dividers>
           <Box component="form" onSubmit={newProjectSubmitFormHandler}>
@@ -184,8 +218,8 @@ function CreateNewProjectComponent({
                   <Paper
                     component="img"
                     src={newImageUrl}
-                    alt={'undefined'}
-                    sx={{ maxHeight: 50, borderRadius: 2 }}
+                    alt={'add new project image'}
+                    sx={{ maxHeight: 100, borderRadius: 2 }}
                   ></Paper>
                 </Grid>
               </Grid>
@@ -290,12 +324,12 @@ function CreateNewProjectComponent({
                       label="Role"
                       onChange={newProjectTeamMemberRoleHandler}
                     >
-                      <MenuItem value={'SM'}>SM</MenuItem>
-                      <MenuItem value={'PM'}>PM</MenuItem>
-                      <MenuItem value={'FE'}>FE</MenuItem>
-                      <MenuItem value={'BE'}>BE</MenuItem>
-                      <MenuItem value={'PO'}>PO</MenuItem>
-                      <MenuItem value={'TS'}>TS</MenuItem>
+                      <MenuItem value={'SM'}>Scrum Master</MenuItem>
+                      <MenuItem value={'PM'}>Project Maneger</MenuItem>
+                      <MenuItem value={'FE'}>Front-End</MenuItem>
+                      <MenuItem value={'BE'}>Back-End</MenuItem>
+                      <MenuItem value={'PO'}>Product Owner</MenuItem>
+                      <MenuItem value={'TS'}>Tester</MenuItem>
                       <MenuItem value={'Other'}>Other</MenuItem>
                     </Select>
                   </FormControl>
@@ -312,7 +346,27 @@ function CreateNewProjectComponent({
                 </Grid>
                 {newTeamMembers.length > 0 && (
                   <Grid xs={12} item container>
-                    <TeamMembersContainer teamMembers={newTeamMembers} />
+                    {newTeamMembers.map((tm) => {
+                      return (
+                        <Grid key={tm.name} item container xs={6} sm={3}>
+                          <Grid item xs={2}>
+                            <IconButton
+                              aria-label="delete project"
+                              size="small"
+                              color="error"
+                              onClick={() => {
+                                newProjectTeamMembersDeleteHandler(tm)
+                              }}
+                            >
+                              <DeleteForeverTwoToneIcon />
+                            </IconButton>
+                          </Grid>
+                          <Grid item xs={10}>
+                            <TeamMemberComponent name={tm.name} role={tm.role} />
+                          </Grid>
+                        </Grid>
+                      )
+                    })}
                   </Grid>
                 )}
               </Grid>
