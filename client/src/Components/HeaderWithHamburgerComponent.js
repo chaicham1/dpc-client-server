@@ -43,14 +43,33 @@ function HeaderWithHamburgerComponent({
     <AppBar position="static" style={{ backgroundColor: bgColor }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            Digital Catalog
-          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 5, display: 'flex', justifyContent: 'flex-start' }}>
+              <Typography variant="h6" noWrap component="div">
+                Digital Catalog
+              </Typography>
+            </Box>
+            <Box sx={{ flexGrow: 5, display: 'flex', justifyContent: 'center' }}>
+              <SearchProjectsComponnent
+                projectsArrSearch={projectsArrSearch}
+                searchHandler={searchHandler}
+                textColor={textColor}
+              />
+            </Box>
+            <Box sx={{ flexGrow: 5, display: 'flex', justifyContent: 'flex-end' }}>
+              <IconButton onClick={themeSwitchHandler} color="inherit">
+                {isDarkTheme ? <Brightness4RoundedIcon /> : <Brightness7RoundedIcon />}
+              </IconButton>
+              <IconButton
+                onClick={() => {
+                  navigate('/login')
+                }}
+                color="inherit"
+              >
+                <PersonRoundedIcon />
+              </IconButton>
+            </Box>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <Hamburger
               toggled={anchorElNav}
@@ -67,20 +86,7 @@ function HeaderWithHamburgerComponent({
           >
             Digital Catalog
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, pl: '50%' }}>
-            <SearchProjectsComponnent
-              projectsArrSearch={projectsArrSearch}
-              searchHandler={searchHandler}
-              textColor={textColor}
-            />
-          </Box>
-          <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
-            <IconButton onClick={themeSwitchHandler} color="inherit">
-              {isDarkTheme ? <Brightness4RoundedIcon /> : <Brightness7RoundedIcon />}
-            </IconButton>
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               onClick={() => {
                 navigate('/login')

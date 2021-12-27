@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 import {
   Button,
@@ -17,6 +18,8 @@ import { Visibility, VisibilityOff } from '@mui/icons-material'
 import BasicPageTamplate from '../Components/Common/BasicPageTamplate'
 
 function LoginPage() {
+  const navigate = useNavigate()
+
   const [usernameValues, setUsernameValues] = useState({
     username: '',
     error: false,
@@ -114,6 +117,20 @@ function LoginPage() {
             <Grid item xs={10} md={5}>
               <Button type="submit" fullWidth variant="contained" size="small">
                 Submit
+              </Button>
+            </Grid>
+          </Grid>
+          <Grid xs={12} item container justifyContent="center">
+            <Grid item xs={10} md={5}>
+              <Button
+                fullWidth
+                variant="text"
+                size="small"
+                onClick={() => {
+                  navigate(`/admin`)
+                }}
+              >
+                Admin
               </Button>
             </Grid>
           </Grid>
