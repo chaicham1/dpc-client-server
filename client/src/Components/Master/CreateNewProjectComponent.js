@@ -36,33 +36,65 @@ function CreateNewProjectComponent({
   openCreateProjectDialog,
   handleCreateProjectClose,
 }) {
-  // const projects = useSelector((state) => state.projects)
+  /* From Redux */
   const amdocsProductsList = useSelector((state) => state.amdocsProductsList)
   const developmentTechnologiesList = useSelector((state) => state.developmentTechnologiesList)
+  const admins = useSelector((state) => state.admins)
 
+  /* Form Hooks */
+  //Basic Info
   const [newProjectName, setNewProjectName] = useState('')
   const [newImageUrl, setNewImageUrl] = useState('')
   const [newDescription, setNewDescription] = useState('')
   const [newAmdocsProducts, setNewAmdocsProducts] = useState([])
+  const [newAdmins, setNewAdmins] = useState(
+    admins.length > 0
+      ? [
+          admins.find((admin) => {
+            return admin.isMaster === true
+          }),
+        ]
+      : []
+  )
   const [newTechnologies, setNewTechnologies] = useState([])
+
+  //Team Members
   const [newTeamMemberName, setNewTeamMemberName] = useState('')
   const [newTeamMemberRole, setNewTeamMemberRole] = useState('')
   const [newTeamMembers, setNewTeamMembers] = useState([])
 
+  //Links
+  const [newLinkTitle, setNewLinkTitle] = useState('')
+  const [newLinkUrl, setNewLinkUrl] = useState('')
+  const [newLinks, setNewLinks] = useState([])
+
+  //Files
+  const [newFileName, setNewFileName] = useState('')
+  const [newFileDownloadUrl, setNewFileDownloadUrl] = useState('')
+  const [newFiles, setNewFiles] = useState([])
+
+  /* Handlers */
   //Handle Project basic info
   function newProjectNameHandler(e) {
     setNewProjectName(e.target.value)
   }
-
   function newProjectImageUrlHandler(e) {
     setNewImageUrl(e.target.value)
   }
-
   function newProjectDescriptionHandler(e) {
     setNewDescription(e.target.value)
   }
-
-  //Handle Amdocs Products related to the project
+  function newProjectAdminsHandler(checked, admin) {
+    if (checked) {
+      setNewAdmins((prevArray) => [...prevArray, admin])
+    } else {
+      setNewAdmins((prevArray) => [
+        ...prevArray.filter((p) => {
+          return p._id !== admin._id
+        }),
+      ])
+    }
+  }
   function newProjectAmdocsProductsHandler(checked, amdocsProduct) {
     if (checked) {
       setNewAmdocsProducts((prevArray) => [...prevArray, amdocsProduct])
@@ -74,8 +106,6 @@ function CreateNewProjectComponent({
       ])
     }
   }
-
-  //Handle Project Technologies
   function newProjectTechnologiesHandler(checked, Technologie) {
     if (checked) {
       setNewTechnologies((prevArray) => [...prevArray, Technologie])
@@ -92,11 +122,9 @@ function CreateNewProjectComponent({
   function newProjectTeamMemberNameHandler(e) {
     setNewTeamMemberName(e.target.value)
   }
-
   function newProjectTeamMemberRoleHandler(e) {
     setNewTeamMemberRole(e.target.value)
   }
-
   function newProjectTeamMembersHandler() {
     if (newTeamMemberName && newTeamMemberRole) {
       setNewTeamMembers((prevArray) => [
@@ -107,11 +135,57 @@ function CreateNewProjectComponent({
       setNewTeamMemberRole('')
     }
   }
-
   function newProjectTeamMembersDeleteHandler(teamMember) {
     setNewTeamMembers((prevArray) => [
       ...prevArray.filter((tm) => {
         return tm.name !== teamMember.name
+      }),
+    ])
+  }
+
+  //Handle Links
+  function newProjectLinkTitleHandler(e) {
+    setNewLinkTitle(e.target.value)
+  }
+  function newProjectLinkUrlHandler(e) {
+    setNewLinkUrl(e.target.value)
+  }
+  function newProjectLinksHandler() {
+    if (newLinkTitle && newLinkUrl) {
+      setNewLinks((prevArray) => [...prevArray, { title: newLinkTitle, url: newLinkUrl }])
+      setNewLinkTitle('')
+      setNewLinkUrl('')
+    }
+  }
+  function newProjectLinksDeleteHandler(link) {
+    setNewLinks((prevArray) => [
+      ...prevArray.filter((li) => {
+        return li.title !== link.title
+      }),
+    ])
+  }
+
+  //Handle Files
+  function newProjectFileNameHandler(e) {
+    setNewFileName(e.target.value)
+  }
+  function newProjectFileDownloadUrlHandler(e) {
+    setNewFileDownloadUrl(e.target.value)
+  }
+  function newProjectFilesHandler() {
+    if (newFileName && newFileDownloadUrl) {
+      setNewFiles((prevArray) => [
+        ...prevArray,
+        { name: newFileName, downloadUrl: newFileDownloadUrl },
+      ])
+      setNewFileName('')
+      setNewFileDownloadUrl('')
+    }
+  }
+  function newProjectFilesDeleteHandler(file) {
+    setNewFiles((prevArray) => [
+      ...prevArray.filter((fi) => {
+        return fi.name !== fi.name
       }),
     ])
   }
@@ -129,37 +203,7 @@ function CreateNewProjectComponent({
       teamMembers: newTeamMembers,
     }
     addProjectHandler(newProject)
-    //add success message when submitted
   }
-
-  // console.log({
-  //   name: newProjectName,
-  //   imgUrl: newImageUrl,
-  //   description: newDescription,
-  //   amdocsProducts: newAmdocsProducts,
-  //   admins: [
-  //     {
-  //       _id: '1',
-  //       username: '',
-  //       password: '',
-  //       isMaster: true,
-  //     },
-  //   ],
-  //   technologies: newTechnologies,
-  //   teamMembers: [{ name: '', role: '' }],
-  //   links: [
-  //     {
-  //       title: '',
-  //       url: '',
-  //     },
-  //   ],
-  //   files: [
-  //     {
-  //       name: '',
-  //       downloadUrl: '',
-  //     },
-  //   ],
-  // })
 
   return (
     <>
@@ -218,7 +262,7 @@ function CreateNewProjectComponent({
                   <Paper
                     component="img"
                     src={newImageUrl}
-                    alt={'add new project image'}
+                    alt={'Paste image url to preview image'}
                     sx={{ maxHeight: 100, borderRadius: 2 }}
                   ></Paper>
                 </Grid>
@@ -236,68 +280,91 @@ function CreateNewProjectComponent({
                   onChangeCapture={newProjectDescriptionHandler}
                 />
               </Grid>
-              <Grid xs={12} item container>
-                {amdocsProductsList.length > 0 && (
-                  <>
-                    <Typography variant="h6" component="div" gutterBottom textAlign="left">
-                      Select Amdocs Products
-                    </Typography>
-                    <List sx={{ maxHeight: 300, overflow: 'auto', width: '100%' }}>
-                      {amdocsProductsList.map((ap) => {
-                        return (
-                          <FormGroup key={ap.title}>
-                            <FormControlLabel
-                              control={
-                                <Checkbox
-                                  onChange={(e) => {
-                                    newProjectAmdocsProductsHandler(e.target.checked, ap)
-                                  }}
-                                />
-                              }
-                              label={
-                                <AmdocsPoductComponent
-                                  title={ap.title}
-                                  description={ap.description}
-                                  imgUrl={ap.imgUrl}
-                                />
-                              }
-                            />
-                          </FormGroup>
-                        )
-                      })}
-                    </List>
-                  </>
-                )}
-              </Grid>
-              <Grid xs={12} item container>
-                {developmentTechnologiesList.length > 0 && (
-                  <>
-                    <Typography variant="h6" component="div" gutterBottom textAlign="left">
-                      Select Technologies
-                    </Typography>
-                    <List sx={{ maxHeight: 200, overflow: 'auto', width: '100%' }}>
-                      {developmentTechnologiesList.map((t) => {
-                        return (
-                          <FormGroup key={t.title}>
-                            <FormControlLabel
-                              control={
-                                <Checkbox
-                                  onChange={(e) => {
-                                    newProjectTechnologiesHandler(e.target.checked, t)
-                                  }}
-                                />
-                              }
-                              label={
-                                <ProjectTechnologieComponent title={t.title} imgUrl={t.imgUrl} />
-                              }
-                            />
-                          </FormGroup>
-                        )
-                      })}
-                    </List>
-                  </>
-                )}
-              </Grid>
+              {admins.length > 0 && (
+                <Grid xs={12} item container>
+                  <Typography variant="h6" component="div" gutterBottom textAlign="left">
+                    Select Admins
+                  </Typography>
+                  <List sx={{ maxHeight: 300, overflow: 'auto', width: '100%' }}>
+                    {admins.map((admin) => {
+                      return (
+                        <FormGroup key={admin._id}>
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                disabled={admin.isMaster}
+                                defaultChecked={admin.isMaster}
+                                onChange={(e) => {
+                                  newProjectAdminsHandler(e.target.checked, admin)
+                                }}
+                              />
+                            }
+                            label={<ListItem alignItems="flex-start">{admin.username}</ListItem>}
+                          />
+                        </FormGroup>
+                      )
+                    })}
+                  </List>
+                </Grid>
+              )}
+              {amdocsProductsList.length > 0 && (
+                <Grid xs={12} item container>
+                  <Typography variant="h6" component="div" gutterBottom textAlign="left">
+                    Select Amdocs Products
+                  </Typography>
+                  <List sx={{ maxHeight: 300, overflow: 'auto', width: '100%' }}>
+                    {amdocsProductsList.map((ap) => {
+                      return (
+                        <FormGroup key={ap.title}>
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                onChange={(e) => {
+                                  newProjectAmdocsProductsHandler(e.target.checked, ap)
+                                }}
+                              />
+                            }
+                            label={
+                              <AmdocsPoductComponent
+                                title={ap.title}
+                                description={ap.description}
+                                imgUrl={ap.imgUrl}
+                              />
+                            }
+                          />
+                        </FormGroup>
+                      )
+                    })}
+                  </List>
+                </Grid>
+              )}
+              {developmentTechnologiesList.length > 0 && (
+                <Grid xs={12} item container>
+                  <Typography variant="h6" component="div" gutterBottom textAlign="left">
+                    Select Technologies
+                  </Typography>
+                  <List sx={{ maxHeight: 200, overflow: 'auto', width: '100%' }}>
+                    {developmentTechnologiesList.map((t) => {
+                      return (
+                        <FormGroup key={t.title}>
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                onChange={(e) => {
+                                  newProjectTechnologiesHandler(e.target.checked, t)
+                                }}
+                              />
+                            }
+                            label={
+                              <ProjectTechnologieComponent title={t.title} imgUrl={t.imgUrl} />
+                            }
+                          />
+                        </FormGroup>
+                      )
+                    })}
+                  </List>
+                </Grid>
+              )}
               <Grid xs={12} item container spacing={3}>
                 <Grid xs={12} item container>
                   <Typography variant="h6" component="div" gutterBottom textAlign="left">
@@ -370,6 +437,7 @@ function CreateNewProjectComponent({
                   </Grid>
                 )}
               </Grid>
+              {/* add links and files adder */}
               <Grid xs={12} item container>
                 <Button variant="contained" type="submit" fullWidth>
                   Create
