@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Typography } from '@mui/material'
+import { Grid, List, ListItem, ListItemText, Typography } from '@mui/material'
 
 function ProjectFilesComponent({ files }) {
   return (
@@ -7,6 +7,36 @@ function ProjectFilesComponent({ files }) {
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Files
       </Typography>
+      {files.length > 0 && (
+        <Grid container spacing={0}>
+          <List sx={{ maxHeight: 600, overflow: 'auto', width: '100%' }}>
+            {files.map((file) => {
+              return (
+                <Grid key={file.name} item xs={12}>
+                  <ListItem alignItems="flex-start">
+                    <ListItemText
+                      primary={file.name}
+                      secondary={
+                        <Typography
+                          variant="a"
+                          component="a"
+                          gutterBottom
+                          textAlign="left"
+                          // sx={{ wordWrap: 'break-word' }}
+                          href={file.downloadUrl}
+                          download
+                        >
+                          {file.downloadUrl}
+                        </Typography>
+                      }
+                    />
+                  </ListItem>
+                </Grid>
+              )
+            })}
+          </List>
+        </Grid>
+      )}
     </Grid>
   )
 }

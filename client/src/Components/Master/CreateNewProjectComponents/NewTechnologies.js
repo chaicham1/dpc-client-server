@@ -10,7 +10,7 @@ function NewTechnologies({ developmentTechnologiesList, newProjectTechnologiesHa
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Select Technologies
       </Typography>
-      <List sx={{ maxHeight: 200, overflow: 'auto', width: '100%' }}>
+      <List sx={{ maxHeight: 600, overflow: 'auto', width: '100%' }}>
         {developmentTechnologiesList.map((t) => {
           return (
             <FormGroup key={t.title}>

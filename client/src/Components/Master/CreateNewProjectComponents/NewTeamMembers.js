@@ -71,8 +71,8 @@ function NewTeamMembers({
         <Grid xs={12} item container>
           {newTeamMembers.map((tm) => {
             return (
-              <Grid key={tm.name} item container xs={6} sm={3}>
-                <Grid item xs={2} sm={1}>
+              <Grid key={tm.name} item container xs={12} sm={6}>
+                <Grid container item xs={1} justifyContent={'center'}>
                   <IconButton
                     aria-label="delete project"
                     size="small"
@@ -84,7 +84,7 @@ function NewTeamMembers({
                     <DeleteForeverTwoToneIcon />
                   </IconButton>
                 </Grid>
-                <Grid item xs={10} sm={11}>
+                <Grid item xs={11}>
                   <TeamMemberComponent name={tm.name} role={tm.role} />
                 </Grid>
               </Grid>

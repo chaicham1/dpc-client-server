@@ -31,7 +31,7 @@ function TeamMemberComponent({ name, role }) {
   }
 
   return (
-    <ListItem alignItems="flex-start">
+    <ListItem alignItems="center">
       <ListItemAvatar>
         <Avatar alt={name} sx={{ bgcolor: bgColor }}>
           {icon}

@@ -10,7 +10,7 @@ function NewAmdocsProducts({ amdocsProductsList, newProjectAmdocsProductsHandler
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Select Amdocs Products
       </Typography>
-      <List sx={{ maxHeight: 300, overflow: 'auto', width: '100%' }}>
+      <List sx={{ maxHeight: 600, overflow: 'auto', width: '100%' }}>
         {amdocsProductsList.map((ap) => {
           return (
             <FormGroup key={ap.title}>

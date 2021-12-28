@@ -15,7 +15,7 @@ function NewAdmins({ admins, newProjectAdminsHandler }) {
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Select Admins
       </Typography>
-      <List sx={{ maxHeight: 300, overflow: 'auto', width: '100%' }}>
+      <List sx={{ maxHeight: 600, overflow: 'auto', width: '100%' }}>
         {admins.map((admin) => {
           return (
             <FormGroup key={admin._id}>

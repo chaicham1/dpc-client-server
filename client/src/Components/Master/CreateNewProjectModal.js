@@ -1,7 +1,16 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import { Button, Dialog, DialogContent, DialogTitle, Grid, Box, IconButton } from '@mui/material'
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  Grid,
+  Box,
+  IconButton,
+  Container,
+} from '@mui/material'
 
 import CloseIcon from '@mui/icons-material/Close'
 
@@ -12,6 +21,8 @@ import NewAdmins from './CreateNewProjectComponents/NewAdmins'
 import NewAmdocsProducts from './CreateNewProjectComponents/NewAmdocsProducts'
 import NewTechnologies from './CreateNewProjectComponents/NewTechnologies'
 import NewTeamMembers from './CreateNewProjectComponents/NewTeamMembers'
+import NewLinks from './CreateNewProjectComponents/NewLinks'
+import NewFiles from './CreateNewProjectComponents/NewFiles'
 
 function CreateNewProjectModal({
   addProjectHandler,
@@ -167,7 +178,7 @@ function CreateNewProjectModal({
   function newProjectFilesDeleteHandler(file) {
     setNewFiles((prevArray) => [
       ...prevArray.filter((fi) => {
-        return fi.name !== fi.name
+        return fi.name !== file.name
       }),
     ])
   }
@@ -180,6 +191,7 @@ function CreateNewProjectModal({
       name: newProjectName,
       imgUrl: newImageUrl,
       description: newDescription,
+      admins: newAdmins,
       amdocsProducts: newAmdocsProducts,
       technologies: newTechnologies,
       teamMembers: newTeamMembers,
@@ -197,8 +209,9 @@ function CreateNewProjectModal({
         scroll={'paper'}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
-        maxWidth="xl"
-        fullWidth
+        // maxWidth="xl"
+        // fullWidth
+        fullScreen
       >
         <DialogTitle id="scroll-dialog-title">
           New Project
@@ -215,52 +228,72 @@ function CreateNewProjectModal({
           </IconButton>
         </DialogTitle>
         <DialogContent dividers>
-          <Box component="form" onSubmit={newProjectSubmitFormHandler}>
-            <Grid container spacing={5}>
-              <NewProjectName
-                newProjectName={newProjectName}
-                newProjectNameHandler={newProjectNameHandler}
-              />
-              <NewImageUrl
-                newImageUrl={newImageUrl}
-                newProjectImageUrlHandler={newProjectImageUrlHandler}
-              />
-              <NewDescription
-                newDescription={newDescription}
-                newProjectDescriptionHandler={newProjectDescriptionHandler}
-              />
-              {admins.length > 0 && (
-                <NewAdmins admins={admins} newProjectAdminsHandler={newProjectAdminsHandler} />
-              )}
-              {amdocsProductsList.length > 0 && (
-                <NewAmdocsProducts
-                  amdocsProductsList={amdocsProductsList}
-                  newProjectAmdocsProductsHandler={newProjectAmdocsProductsHandler}
+          <Container>
+            <Box component="form" onSubmit={newProjectSubmitFormHandler}>
+              <Grid container spacing={5}>
+                <NewProjectName
+                  newProjectName={newProjectName}
+                  newProjectNameHandler={newProjectNameHandler}
                 />
-              )}
-              {developmentTechnologiesList.length > 0 && (
-                <NewTechnologies
-                  developmentTechnologiesList={developmentTechnologiesList}
-                  newProjectTechnologiesHandler={newProjectTechnologiesHandler}
+                <NewImageUrl
+                  newImageUrl={newImageUrl}
+                  newProjectImageUrlHandler={newProjectImageUrlHandler}
                 />
-              )}
-              <NewTeamMembers
-                newTeamMemberName={newTeamMemberName}
-                newProjectTeamMemberNameHandler={newProjectTeamMemberNameHandler}
-                newTeamMemberRole={newTeamMemberRole}
-                newProjectTeamMemberRoleHandler={newProjectTeamMemberRoleHandler}
-                newProjectTeamMembersHandler={newProjectTeamMembersHandler}
-                newTeamMembers={newTeamMembers}
-                newProjectTeamMembersDeleteHandler={newProjectTeamMembersDeleteHandler}
-              />
-              {/* add links and files adder */}
-              <Grid xs={12} item container>
-                <Button variant="contained" type="submit" fullWidth>
-                  Create
-                </Button>
+                <NewDescription
+                  newDescription={newDescription}
+                  newProjectDescriptionHandler={newProjectDescriptionHandler}
+                />
+                {admins.length > 0 && (
+                  <NewAdmins admins={admins} newProjectAdminsHandler={newProjectAdminsHandler} />
+                )}
+                {amdocsProductsList.length > 0 && (
+                  <NewAmdocsProducts
+                    amdocsProductsList={amdocsProductsList}
+                    newProjectAmdocsProductsHandler={newProjectAmdocsProductsHandler}
+                  />
+                )}
+                {developmentTechnologiesList.length > 0 && (
+                  <NewTechnologies
+                    developmentTechnologiesList={developmentTechnologiesList}
+                    newProjectTechnologiesHandler={newProjectTechnologiesHandler}
+                  />
+                )}
+                <NewTeamMembers
+                  newTeamMemberName={newTeamMemberName}
+                  newProjectTeamMemberNameHandler={newProjectTeamMemberNameHandler}
+                  newTeamMemberRole={newTeamMemberRole}
+                  newProjectTeamMemberRoleHandler={newProjectTeamMemberRoleHandler}
+                  newProjectTeamMembersHandler={newProjectTeamMembersHandler}
+                  newTeamMembers={newTeamMembers}
+                  newProjectTeamMembersDeleteHandler={newProjectTeamMembersDeleteHandler}
+                />
+                <NewLinks
+                  newLinkTitle={newLinkTitle}
+                  newProjectLinkTitleHandler={newProjectLinkTitleHandler}
+                  newLinkUrl={newLinkUrl}
+                  newProjectLinkUrlHandler={newProjectLinkUrlHandler}
+                  newProjectLinksHandler={newProjectLinksHandler}
+                  newLinks={newLinks}
+                  newProjectLinksDeleteHandler={newProjectLinksDeleteHandler}
+                />
+                <NewFiles
+                  newFileName={newFileName}
+                  newProjectFileNameHandler={newProjectFileNameHandler}
+                  newFileDownloadUrl={newFileDownloadUrl}
+                  newProjectFileDownloadUrlHandler={newProjectFileDownloadUrlHandler}
+                  newProjectFilesHandler={newProjectFilesHandler}
+                  newFiles={newFiles}
+                  newProjectFilesDeleteHandler={newProjectFilesDeleteHandler}
+                />
+                {/* add links and files adder */}
+                <Grid xs={12} item container my={10}>
+                  <Button variant="contained" type="submit" fullWidth>
+                    Create New Project
+                  </Button>
+                </Grid>
               </Grid>
-            </Grid>
-          </Box>
+            </Box>
+          </Container>
         </DialogContent>
       </Dialog>
     </>
