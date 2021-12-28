@@ -29,7 +29,7 @@ import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone'
 import AddBoxTwoToneIcon from '@mui/icons-material/AddBoxTwoTone'
 
 import Loader from '../Common/Loader'
-import CreateNewProjectComponent from './CreateNewProjectComponent'
+import CreateNewProjectModal from './CreateNewProjectModal'
 import Warning from '../Common/Warning'
 
 function ProjectsTableComponent() {
@@ -213,7 +213,7 @@ function ProjectsTableComponent() {
         </Dialog>
       )}
       {openCreateProjectDialog && (
-        <CreateNewProjectComponent
+        <CreateNewProjectModal
           addProjectHandler={addProjectHandler}
           handleCreateProjectClose={handleCreateProjectClose}
           openCreateProjectDialog={openCreateProjectDialog}
