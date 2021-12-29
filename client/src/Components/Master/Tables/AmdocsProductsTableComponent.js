@@ -19,7 +19,7 @@ import {
 import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone'
 import AddBoxTwoToneIcon from '@mui/icons-material/AddBoxTwoTone'
 
-import Loader from '../Common/Loader'
+import Loader from '../../Common/Loader'
 
 function AmdocsProductsTableComponent() {
   //{ id, name, imgUrl, description, amdocsProducts, admins, technologies, teamMembers, links, files }

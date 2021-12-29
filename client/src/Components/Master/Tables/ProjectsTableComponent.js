@@ -27,9 +27,9 @@ import {
 import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone'
 import AddBoxTwoToneIcon from '@mui/icons-material/AddBoxTwoTone'
 
-import Loader from '../Common/Loader'
-import CreateNewProjectModal from './CreateNewProjectModal'
-import Warning from '../Common/Warning'
+import Loader from '../../Common/Loader'
+import Warning from '../../Common/Warning'
+import CreateNewProjectModal from '../Modals/CreateNewProjectModal'
 
 function ProjectsTableComponent() {
   const projects = useSelector((state) => state.projects)

@@ -9,6 +9,7 @@ import {
   TableHead,
   TableRow,
   Paper,
+  CardMedia,
   Typography,
   IconButton,
   TablePagination,
@@ -18,10 +19,11 @@ import {
 import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone'
 import AddBoxTwoToneIcon from '@mui/icons-material/AddBoxTwoTone'
 
-import Loader from '../Common/Loader'
+import Loader from '../../Common/Loader'
 
-function AdminsTableComponent() {
-  const admins = useSelector((state) => state.admins)
+function TechnologiesTableComponent() {
+  //{ id, name, imgUrl, description, amdocsProducts, admins, technologies, teamMembers, links, files }
+  const developmentTechnologiesList = useSelector((state) => state.developmentTechnologiesList)
 
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(0)
@@ -37,30 +39,28 @@ function AdminsTableComponent() {
   }
 
   useEffect(() => {
-    if (admins.length > 0) {
+    if (developmentTechnologiesList.length > 0) {
       setLoading(false)
     }
-  }, [admins])
+  }, [developmentTechnologiesList])
 
-  const Row = ({ admin }) => {
+  const Row = ({ t }) => {
     return (
       <>
         <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-          <TableCell align="left">{admin._id}</TableCell>
-          <TableCell align="left">{admin.username}</TableCell>
-          <TableCell align="left">{admin.password}</TableCell>
-          <TableCell align="left">{admin.isMaster ? 'YES' : 'NO'}</TableCell>
+          <TableCell align="left">
+            <CardMedia component="img" height={50} image={t.imgUrl} alt={t.title} />
+          </TableCell>
+          <TableCell align="left">{t.title}</TableCell>
           <TableCell component="th" scope="row" align="right">
-            {!admin.isMaster && (
-              <IconButton
-                aria-label="delete project"
-                size="small"
-                color="error"
-                onClick={() => console.log(`delete ${admin.username}`)}
-              >
-                <DeleteForeverTwoToneIcon />
-              </IconButton>
-            )}
+            <IconButton
+              aria-label="delete project"
+              size="small"
+              color="error"
+              onClick={() => console.log(`delete ${t.title}`)}
+            >
+              <DeleteForeverTwoToneIcon />
+            </IconButton>
           </TableCell>
         </TableRow>
       </>
@@ -72,24 +72,25 @@ function AdminsTableComponent() {
   ) : (
     <>
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
-        Admins
+        Technologies
       </Typography>
       <Paper sx={{ width: '100%' }}>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table aria-label=" table">
             <TableHead>
               <TableRow>
-                <TableCell align="left">ID</TableCell>
-                <TableCell align="left">USERNAME</TableCell>
-                <TableCell align="left">PASSWORD</TableCell>
-                <TableCell align="left">MASTER</TableCell>
+                <TableCell align="left" width={50}>
+                  Image
+                </TableCell>
+                <TableCell align="left">Name</TableCell>
+
                 <TableCell align="right">
-                  <Tooltip title="Add New Admin">
+                  <Tooltip title="Add New Technologi">
                     <IconButton
-                      aria-label="add new admin"
+                      aria-label="add new technologi"
                       size="small"
                       color="success"
-                      onClick={() => console.log(`add new admin`)}
+                      onClick={() => console.log(`add new technologi`)}
                     >
                       <AddBoxTwoToneIcon />
                     </IconButton>
@@ -98,16 +99,18 @@ function AdminsTableComponent() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {admins.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((admin) => (
-                <Row key={admin._id} admin={admin} />
-              ))}
+              {developmentTechnologiesList
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((t) => (
+                  <Row key={t.title} t={t} />
+                ))}
             </TableBody>
           </Table>
         </TableContainer>
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={admins.length}
+          count={developmentTechnologiesList.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
@@ -118,4 +121,4 @@ function AdminsTableComponent() {
   )
 }
 
-export default AdminsTableComponent
+export default TechnologiesTableComponent

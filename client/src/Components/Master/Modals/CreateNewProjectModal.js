@@ -14,15 +14,15 @@ import {
 
 import CloseIcon from '@mui/icons-material/Close'
 
-import NewProjectName from './CreateNewProjectComponents/NewProjectName'
-import NewImageUrl from './CreateNewProjectComponents/NewImageUrl'
-import NewDescription from './CreateNewProjectComponents/NewDescription'
-import NewAdmins from './CreateNewProjectComponents/NewAdmins'
-import NewAmdocsProducts from './CreateNewProjectComponents/NewAmdocsProducts'
-import NewTechnologies from './CreateNewProjectComponents/NewTechnologies'
-import NewTeamMembers from './CreateNewProjectComponents/NewTeamMembers'
-import NewLinks from './CreateNewProjectComponents/NewLinks'
-import NewFiles from './CreateNewProjectComponents/NewFiles'
+import NewProjectName from '../CreateNewProjectComponents/NewProjectName'
+import NewImageUrl from '../CreateNewProjectComponents/NewImageUrl'
+import NewDescription from '../CreateNewProjectComponents/NewDescription'
+import NewAdmins from '../CreateNewProjectComponents/NewAdmins'
+import NewAmdocsProducts from '../CreateNewProjectComponents/NewAmdocsProducts'
+import NewTechnologies from '../CreateNewProjectComponents/NewTechnologies'
+import NewTeamMembers from '../CreateNewProjectComponents/NewTeamMembers'
+import NewLinks from '../CreateNewProjectComponents/NewLinks'
+import NewFiles from '../CreateNewProjectComponents/NewFiles'
 
 function CreateNewProjectModal({
   addProjectHandler,

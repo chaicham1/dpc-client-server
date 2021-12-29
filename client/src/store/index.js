@@ -7,7 +7,7 @@ const projectsReducer = (
     projects: projects,
     amdocsProductsList: amdocsProductsList,
     developmentTechnologiesList: developmentTechnologiesList,
-    admins: admins,
+    admins: admins.length > 0 && admins.map(({ password, ...other }) => other),
   },
   action
 ) => {

@@ -4,10 +4,10 @@ import BasicPageTamplate from '../Components/Common/BasicPageTamplate'
 
 import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone'
 
-import ProjectsTableComponent from '../Components/Master/ProjectsTableComponent'
-import TechnologiesTableComponent from '../Components/Master/TechnologiesTableComponent'
-import AmdocsProductsTableComponent from '../Components/Master/AmdocsProductsTableComponent'
-import AdminsTableComponent from '../Components/Master/AdminsTableComponent'
+import ProjectsTableComponent from '../Components/Master/Tables/ProjectsTableComponent'
+import TechnologiesTableComponent from '../Components/Master/Tables/TechnologiesTableComponent'
+import AmdocsProductsTableComponent from '../Components/Master/Tables/AmdocsProductsTableComponent'
+import AdminsTableComponent from '../Components/Master/Tables/AdminsTableComponent'
 
 function AdminPage() {
   //TODO:
