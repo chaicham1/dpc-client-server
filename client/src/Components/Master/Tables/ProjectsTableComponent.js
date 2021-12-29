@@ -44,7 +44,7 @@ function ProjectsTableComponent() {
   const [showCreateNewProjectSuccessMessage, setCreateNewProjectSuccessMessage] = useState(false)
 
   const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = useState(5)
+  const [rowsPerPage, setRowsPerPage] = useState(10)
 
   useEffect(() => {
     if (projects.length > 0) {
@@ -147,7 +147,7 @@ function ProjectsTableComponent() {
         Projects
       </Typography>
       <Paper sx={{ width: '100%' }}>
-        <TableContainer sx={{ maxHeight: 600 }}>
+        <TableContainer sx={{ maxHeight: 1000 }}>
           <Table aria-label=" table">
             <TableHead>
               <TableRow>
@@ -180,7 +180,7 @@ function ProjectsTableComponent() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[10, 25, 50]}
           component="div"
           count={projects.length}
           rowsPerPage={rowsPerPage}

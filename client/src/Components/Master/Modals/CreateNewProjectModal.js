@@ -202,101 +202,96 @@ function CreateNewProjectModal({
   }
 
   return (
-    <>
-      <Dialog
-        open={openCreateProjectDialog}
-        onClose={handleCreateProjectClose}
-        scroll={'paper'}
-        aria-labelledby="scroll-dialog-title"
-        aria-describedby="scroll-dialog-description"
-        // maxWidth="xl"
-        // fullWidth
-        fullScreen
-      >
-        <DialogTitle id="scroll-dialog-title">
-          New Project
-          <IconButton
-            aria-label="close"
-            onClick={handleCreateProjectClose}
-            sx={{
-              position: 'absolute',
-              right: 10,
-              top: 10,
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-        </DialogTitle>
-        <DialogContent dividers>
-          <Container>
-            <Box component="form" onSubmit={newProjectSubmitFormHandler}>
-              <Grid container spacing={5}>
-                <NewProjectName
-                  newProjectName={newProjectName}
-                  newProjectNameHandler={newProjectNameHandler}
+    <Dialog
+      open={openCreateProjectDialog}
+      onClose={handleCreateProjectClose}
+      scroll={'paper'}
+      aria-labelledby="scroll-dialog-title"
+      aria-describedby="scroll-dialog-description"
+      fullScreen
+    >
+      <DialogTitle id="scroll-dialog-title">
+        New Project
+        <IconButton
+          aria-label="close"
+          onClick={handleCreateProjectClose}
+          sx={{
+            position: 'absolute',
+            right: 10,
+            top: 10,
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
+      <DialogContent dividers>
+        <Container>
+          <Box component="form" onSubmit={newProjectSubmitFormHandler}>
+            <Grid container spacing={5}>
+              <NewProjectName
+                newProjectName={newProjectName}
+                newProjectNameHandler={newProjectNameHandler}
+              />
+              <NewImageUrl
+                newImageUrl={newImageUrl}
+                newProjectImageUrlHandler={newProjectImageUrlHandler}
+              />
+              <NewDescription
+                newDescription={newDescription}
+                newProjectDescriptionHandler={newProjectDescriptionHandler}
+              />
+              {admins.length > 0 && (
+                <NewAdmins admins={admins} newProjectAdminsHandler={newProjectAdminsHandler} />
+              )}
+              {amdocsProductsList.length > 0 && (
+                <NewAmdocsProducts
+                  amdocsProductsList={amdocsProductsList}
+                  newProjectAmdocsProductsHandler={newProjectAmdocsProductsHandler}
                 />
-                <NewImageUrl
-                  newImageUrl={newImageUrl}
-                  newProjectImageUrlHandler={newProjectImageUrlHandler}
+              )}
+              {developmentTechnologiesList.length > 0 && (
+                <NewTechnologies
+                  developmentTechnologiesList={developmentTechnologiesList}
+                  newProjectTechnologiesHandler={newProjectTechnologiesHandler}
                 />
-                <NewDescription
-                  newDescription={newDescription}
-                  newProjectDescriptionHandler={newProjectDescriptionHandler}
-                />
-                {admins.length > 0 && (
-                  <NewAdmins admins={admins} newProjectAdminsHandler={newProjectAdminsHandler} />
-                )}
-                {amdocsProductsList.length > 0 && (
-                  <NewAmdocsProducts
-                    amdocsProductsList={amdocsProductsList}
-                    newProjectAmdocsProductsHandler={newProjectAmdocsProductsHandler}
-                  />
-                )}
-                {developmentTechnologiesList.length > 0 && (
-                  <NewTechnologies
-                    developmentTechnologiesList={developmentTechnologiesList}
-                    newProjectTechnologiesHandler={newProjectTechnologiesHandler}
-                  />
-                )}
-                <NewTeamMembers
-                  newTeamMemberName={newTeamMemberName}
-                  newProjectTeamMemberNameHandler={newProjectTeamMemberNameHandler}
-                  newTeamMemberRole={newTeamMemberRole}
-                  newProjectTeamMemberRoleHandler={newProjectTeamMemberRoleHandler}
-                  newProjectTeamMembersHandler={newProjectTeamMembersHandler}
-                  newTeamMembers={newTeamMembers}
-                  newProjectTeamMembersDeleteHandler={newProjectTeamMembersDeleteHandler}
-                />
-                <NewLinks
-                  newLinkTitle={newLinkTitle}
-                  newProjectLinkTitleHandler={newProjectLinkTitleHandler}
-                  newLinkUrl={newLinkUrl}
-                  newProjectLinkUrlHandler={newProjectLinkUrlHandler}
-                  newProjectLinksHandler={newProjectLinksHandler}
-                  newLinks={newLinks}
-                  newProjectLinksDeleteHandler={newProjectLinksDeleteHandler}
-                />
-                <NewFiles
-                  newFileName={newFileName}
-                  newProjectFileNameHandler={newProjectFileNameHandler}
-                  newFileDownloadUrl={newFileDownloadUrl}
-                  newProjectFileDownloadUrlHandler={newProjectFileDownloadUrlHandler}
-                  newProjectFilesHandler={newProjectFilesHandler}
-                  newFiles={newFiles}
-                  newProjectFilesDeleteHandler={newProjectFilesDeleteHandler}
-                />
-                {/* add links and files adder */}
-                <Grid xs={12} item container my={10}>
-                  <Button variant="contained" type="submit" fullWidth>
-                    Create New Project
-                  </Button>
-                </Grid>
+              )}
+              <NewTeamMembers
+                newTeamMemberName={newTeamMemberName}
+                newProjectTeamMemberNameHandler={newProjectTeamMemberNameHandler}
+                newTeamMemberRole={newTeamMemberRole}
+                newProjectTeamMemberRoleHandler={newProjectTeamMemberRoleHandler}
+                newProjectTeamMembersHandler={newProjectTeamMembersHandler}
+                newTeamMembers={newTeamMembers}
+                newProjectTeamMembersDeleteHandler={newProjectTeamMembersDeleteHandler}
+              />
+              <NewLinks
+                newLinkTitle={newLinkTitle}
+                newProjectLinkTitleHandler={newProjectLinkTitleHandler}
+                newLinkUrl={newLinkUrl}
+                newProjectLinkUrlHandler={newProjectLinkUrlHandler}
+                newProjectLinksHandler={newProjectLinksHandler}
+                newLinks={newLinks}
+                newProjectLinksDeleteHandler={newProjectLinksDeleteHandler}
+              />
+              <NewFiles
+                newFileName={newFileName}
+                newProjectFileNameHandler={newProjectFileNameHandler}
+                newFileDownloadUrl={newFileDownloadUrl}
+                newProjectFileDownloadUrlHandler={newProjectFileDownloadUrlHandler}
+                newProjectFilesHandler={newProjectFilesHandler}
+                newFiles={newFiles}
+                newProjectFilesDeleteHandler={newProjectFilesDeleteHandler}
+              />
+              <Grid xs={12} item container my={10}>
+                <Button variant="contained" type="submit" fullWidth>
+                  Create New Project
+                </Button>
               </Grid>
-            </Box>
-          </Container>
-        </DialogContent>
-      </Dialog>
-    </>
+            </Grid>
+          </Box>
+        </Container>
+      </DialogContent>
+    </Dialog>
   )
 }
 

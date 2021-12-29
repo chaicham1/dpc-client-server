@@ -10,24 +10,76 @@ import {
   TableRow,
   Paper,
   CardMedia,
+  Button,
   Typography,
   IconButton,
   TablePagination,
   Tooltip,
+  Dialog,
+  DialogTitle,
+  DialogActions,
+  Alert,
+  AlertTitle,
+  Grid,
 } from '@mui/material'
 
 import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone'
 import AddBoxTwoToneIcon from '@mui/icons-material/AddBoxTwoTone'
 
 import Loader from '../../Common/Loader'
+import Warning from '../../Common/Warning'
+import CreateNewTechnologieModal from '../Modals/CreateNewTechnologieModal'
 
 function TechnologiesTableComponent() {
-  //{ id, name, imgUrl, description, amdocsProducts, admins, technologies, teamMembers, links, files }
   const developmentTechnologiesList = useSelector((state) => state.developmentTechnologiesList)
+
+  const [openCreateTechnologieDialog, setOpenCreateTechnologieDialog] = useState(false)
+
+  const [openDeleteDialog, setOpenDeleteDialog] = useState(false)
+  const [currentTechnologieToDelete, setcurrentTechnologieToDelete] = useState(null)
+  const [showCreateNewTechnologieSuccessMessage, setCreateNewTechnologieSuccessMessage] =
+    useState(false)
 
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = useState(5)
+  const [rowsPerPage, setRowsPerPage] = useState(10)
+
+  useEffect(() => {
+    if (developmentTechnologiesList.length > 0) {
+      setLoading(false)
+    }
+  }, [developmentTechnologiesList])
+
+  const addTechnologieHandler = (newTechnologie) => {
+    console.log(newTechnologie)
+    handleCreateTechnologieClose()
+    setCreateNewTechnologieSuccessMessage(true)
+  }
+
+  const handleCreateTechnologieOpen = () => {
+    setOpenCreateTechnologieDialog(true)
+  }
+
+  const handleCreateTechnologieClose = () => {
+    setOpenCreateTechnologieDialog(false)
+  }
+
+  //Handle Technologie Delete
+  const deleteTechnologieHandler = (technologie) => {
+    setcurrentTechnologieToDelete(technologie)
+    handleDeleteDialogOpen()
+  }
+  const handleDeleteDialogOpen = () => {
+    setOpenDeleteDialog(true)
+  }
+  const handleDeleteDialogClose = () => {
+    setOpenDeleteDialog(false)
+    setcurrentTechnologieToDelete(null)
+  }
+  const handleDeleteDialogCloseAgree = () => {
+    console.log('agree to delete ' + currentTechnologieToDelete.title)
+    handleDeleteDialogClose()
+  }
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage)
@@ -37,12 +89,6 @@ function TechnologiesTableComponent() {
     setRowsPerPage(+event.target.value)
     setPage(0)
   }
-
-  useEffect(() => {
-    if (developmentTechnologiesList.length > 0) {
-      setLoading(false)
-    }
-  }, [developmentTechnologiesList])
 
   const Row = ({ t }) => {
     return (
@@ -54,10 +100,12 @@ function TechnologiesTableComponent() {
           <TableCell align="left">{t.title}</TableCell>
           <TableCell component="th" scope="row" align="right">
             <IconButton
-              aria-label="delete project"
+              aria-label="delete Technologie"
               size="small"
               color="error"
-              onClick={() => console.log(`delete ${t.title}`)}
+              onClick={() => {
+                deleteTechnologieHandler(t)
+              }}
             >
               <DeleteForeverTwoToneIcon />
             </IconButton>
@@ -71,11 +119,25 @@ function TechnologiesTableComponent() {
     <Loader />
   ) : (
     <>
+      {showCreateNewTechnologieSuccessMessage && (
+        <Grid xs={12} item container justifyContent="center">
+          <Alert
+            severity="success"
+            sx={{ width: '100%', textAlign: 'left' }}
+            onClose={() => {
+              setCreateNewTechnologieSuccessMessage(false)
+            }}
+          >
+            <AlertTitle>Success</AlertTitle>
+            New Technologie Created Succesfully
+          </Alert>
+        </Grid>
+      )}
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Technologies
       </Typography>
       <Paper sx={{ width: '100%' }}>
-        <TableContainer sx={{ maxHeight: 440 }}>
+        <TableContainer sx={{ maxHeight: 1000 }}>
           <Table aria-label=" table">
             <TableHead>
               <TableRow>
@@ -90,7 +152,7 @@ function TechnologiesTableComponent() {
                       aria-label="add new technologi"
                       size="small"
                       color="success"
-                      onClick={() => console.log(`add new technologi`)}
+                      onClick={handleCreateTechnologieOpen}
                     >
                       <AddBoxTwoToneIcon />
                     </IconButton>
@@ -108,7 +170,7 @@ function TechnologiesTableComponent() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[10, 25, 50]}
           component="div"
           count={developmentTechnologiesList.length}
           rowsPerPage={rowsPerPage}
@@ -117,6 +179,35 @@ function TechnologiesTableComponent() {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
+      {openDeleteDialog && currentTechnologieToDelete.title && (
+        <Dialog
+          open={openDeleteDialog}
+          onClose={handleDeleteDialogClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            <Warning
+              message={`Are you sure you want to delete ${currentTechnologieToDelete.title}?`}
+            />
+          </DialogTitle>
+          <DialogActions>
+            <Button variant="contained" onClick={handleDeleteDialogClose}>
+              Cancle
+            </Button>
+            <Button onClick={handleDeleteDialogCloseAgree} autoFocus>
+              Agree
+            </Button>
+          </DialogActions>
+        </Dialog>
+      )}
+      {openCreateTechnologieDialog && (
+        <CreateNewTechnologieModal
+          addTechnologieHandler={addTechnologieHandler}
+          handleCreateTechnologieClose={handleCreateTechnologieClose}
+          openCreateTechnologieDialog={openCreateTechnologieDialog}
+        />
+      )}
     </>
   )
 }
