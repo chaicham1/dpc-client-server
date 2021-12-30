@@ -9,7 +9,6 @@ import {
   TableHead,
   TableRow,
   Paper,
-  CardMedia,
   Button,
   Typography,
   IconButton,

@@ -22,7 +22,7 @@ function ProjectFilesComponent({ files }) {
                           component="a"
                           gutterBottom
                           textAlign="left"
-                          // sx={{ wordWrap: 'break-word' }}
+                          color={'primary'}
                           href={file.downloadUrl}
                           download
                         >
