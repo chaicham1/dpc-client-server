@@ -122,7 +122,7 @@ function CreateNewAmdocsProductModal({
                   onChangeCapture={newAmdocsProductDescriptionHandler}
                 />
               </Grid>
-              <Grid xs={12} item container my={10}>
+              <Grid xs={12} item container mb={5}>
                 <Button variant="contained" type="submit" fullWidth>
                   Create New AmdocsProduct
                 </Button>

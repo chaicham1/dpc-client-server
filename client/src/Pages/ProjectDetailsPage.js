@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
-import { Grid } from '@mui/material'
+import { Grid, IconButton, Tooltip } from '@mui/material'
+
+import EditTwoToneIcon from '@mui/icons-material/EditTwoTone'
 
 import Error from '../Components/Common/Error'
 import ProjectLinksComponent from '../Components/ProjectLinksComponent'
@@ -18,6 +20,7 @@ import BasicPageTamplate from '../Components/Common/BasicPageTamplate'
 function ProjectDetailsPage() {
   //TODO: Check if project name exist, it not put message to user and button to redirect to homepage
   const projects = useSelector((state) => state.projects)
+  const logedInUser = useSelector((state) => state.logedInUser)
 
   const [loading, setLoading] = useState(true)
 
@@ -26,6 +29,13 @@ function ProjectDetailsPage() {
   const currentProject = projects?.find((p) => {
     return p.name.toUpperCase() === id.toUpperCase()
   })
+  const canEditProject =
+    (logedInUser &&
+      currentProject &&
+      currentProject.admins.find((admin) => {
+        return admin._id === logedInUser._id
+      })) ||
+    logedInUser.isMaster
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -45,6 +55,22 @@ function ProjectDetailsPage() {
         <BasicPageTamplate>
           {currentProject ? (
             <Grid container spacing={3} pt={2} direction="column" alignItems="center">
+              {!!canEditProject && (
+                <Grid item container direction="column" alignItems="end">
+                  <Tooltip title={`Edit ${currentProject.name.toUpperCase()}`}>
+                    <IconButton
+                      aria-label="edit projet"
+                      size="small"
+                      color="warning"
+                      onClick={() => {
+                        console.log('edit ' + currentProject.name.toUpperCase())
+                      }}
+                    >
+                      <EditTwoToneIcon />
+                    </IconButton>
+                  </Tooltip>
+                </Grid>
+              )}
               <ProjectTitleComponent name={currentProject.name.toUpperCase()} />
               <ProjectDescriptionComponent
                 description={currentProject.description}

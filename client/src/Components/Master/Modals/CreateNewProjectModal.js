@@ -282,7 +282,7 @@ function CreateNewProjectModal({
                 newFiles={newFiles}
                 newProjectFilesDeleteHandler={newProjectFilesDeleteHandler}
               />
-              <Grid xs={12} item container my={10}>
+              <Grid xs={12} item container mb={5}>
                 <Button variant="contained" type="submit" fullWidth>
                   Create New Project
                 </Button>

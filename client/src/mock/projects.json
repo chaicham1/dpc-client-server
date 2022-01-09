@@ -24,10 +24,16 @@
       ],
       "admins": [
         {
-          "_id": "1",
+          "_id": 1,
           "username": "Nir",
           "password": "12345678",
           "isMaster": true
+        },
+        {
+          "_id": 2,
+          "username": "test",
+          "password": "12345678",
+          "isMaster": false
         }
       ],
       "technologies": [
@@ -118,7 +124,7 @@
       ],
       "admins": [
         {
-          "_id": "1",
+          "_id": 1,
           "username": "Nir",
           "password": "12345678",
           "isMaster": true
@@ -212,7 +218,7 @@
       ],
       "admins": [
         {
-          "_id": "1",
+          "_id": 1,
           "username": "Nir",
           "password": "12345678",
           "isMaster": true
@@ -307,7 +313,7 @@
       ],
       "admins": [
         {
-          "_id": "1",
+          "_id": 1,
           "username": "Nir",
           "password": "12345678",
           "isMaster": true
@@ -401,7 +407,7 @@
       ],
       "admins": [
         {
-          "_id": "1",
+          "_id": 1,
           "username": "Nir",
           "password": "12345678",
           "isMaster": true
@@ -495,7 +501,7 @@
       ],
       "admins": [
         {
-          "_id": "1",
+          "_id": 1,
           "username": "Nir",
           "password": "12345678",
           "isMaster": true
@@ -590,7 +596,7 @@
       ],
       "admins": [
         {
-          "_id": "1",
+          "_id": 1,
           "username": "Nir",
           "password": "12345678",
           "isMaster": true
@@ -684,7 +690,7 @@
       ],
       "admins": [
         {
-          "_id": "1",
+          "_id": 1,
           "username": "Nir",
           "password": "12345678",
           "isMaster": true
