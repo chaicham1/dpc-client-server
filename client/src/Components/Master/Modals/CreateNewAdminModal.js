@@ -16,6 +16,9 @@ import {
   InputAdornment,
   FormHelperText,
   Alert,
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
 } from '@mui/material'
 
 import CloseIcon from '@mui/icons-material/Close'
@@ -23,7 +26,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material'
 
 function CreateNewAdminModal({ addAdminHandler, openCreateAdminDialog, handleCreateAdminClose }) {
   const [newAdminName, setNewAdminName] = useState('')
-  const [newAdminIsAdmin, setNewAdminIsAdmin] = useState(false)
+  const [newAdminIsMaster, setNewAdminIsMaster] = useState(false)
   const [showErrorMessage, setShowErrorMessage] = useState(false)
 
   const [newAdminPassword, setNewAdminPassword] = useState({
@@ -77,8 +80,8 @@ function CreateNewAdminModal({ addAdminHandler, openCreateAdminDialog, handleCre
     }
   }
 
-  function newAdminIsAdmindHandler(e) {
-    setNewAdminIsAdmin(e.target.value)
+  function newAdminIsMasterdHandler(e) {
+    setNewAdminIsMaster(e.target.checked)
   }
 
   function newAdminSubmitFormHandler(e) {
@@ -88,7 +91,7 @@ function CreateNewAdminModal({ addAdminHandler, openCreateAdminDialog, handleCre
       const newAdmin = {
         name: newAdminName,
         password: newAdminPassword.password,
-        isAdmin: newAdminIsAdmin,
+        isMaster: newAdminIsMaster,
       }
       addAdminHandler(newAdmin)
     }
@@ -134,6 +137,7 @@ function CreateNewAdminModal({ addAdminHandler, openCreateAdminDialog, handleCre
                   onChangeCapture={newAdminNameHandler}
                 />
               </Grid>
+
               <Grid xs={12} item container spacing={5}>
                 <Grid sm={6} item container>
                   <FormControl required fullWidth variant="outlined">
@@ -196,7 +200,19 @@ function CreateNewAdminModal({ addAdminHandler, openCreateAdminDialog, handleCre
                   </FormControl>
                 </Grid>
               </Grid>
-
+              <Grid sm={6} item container>
+                <FormGroup>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={newAdminIsMaster}
+                        onChangeCapture={newAdminIsMasterdHandler}
+                      />
+                    }
+                    label="Is Master"
+                  />
+                </FormGroup>
+              </Grid>
               {showErrorMessage && (
                 <Grid xs={12} item container>
                   <Alert severity="error" sx={{ width: '100%' }}>
