@@ -19,7 +19,7 @@ function AdminPage() {
   }, [])
 
   return (
-    <BasicPageTamplate>
+    <BasicPageTamplate home={true}>
       <Grid container spacing={5} pt={3} justifyContent="center" textAlign="center">
         <Grid xs={12} item container justifyContent="center">
           <AdminPanelSettingsTwoToneIcon color="primary" fontSize="large" />

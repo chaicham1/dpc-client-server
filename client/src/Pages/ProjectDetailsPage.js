@@ -54,7 +54,7 @@ function ProjectDetailsPage() {
       ) : (
         <BasicPageTamplate>
           {currentProject ? (
-            <Grid container spacing={3} pt={2} direction="column" alignItems="center">
+            <Grid container spacing={3} direction="column" alignItems="center">
               {!!canEditProject && (
                 <Grid item container direction="column" alignItems="end">
                   <Tooltip title={`Edit ${currentProject.name.toUpperCase()}`}>

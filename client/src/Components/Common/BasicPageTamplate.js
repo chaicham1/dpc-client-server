@@ -5,12 +5,12 @@ import { Button, Container } from '@mui/material'
 import { Box } from '@mui/system'
 import ArrowLeftRoundedIcon from '@mui/icons-material/ArrowLeftRounded'
 
-function BasicPageTamplate({ children, goTo = 'Back' }) {
+function BasicPageTamplate({ children, goTo = 'Back', home = false }) {
   const navigate = useNavigate()
   return (
     <>
-      <Container>
-        <Box pt={5} pb={5}>
+      <Container pb={5}>
+        <Box pt={5}>
           <Button
             size="small"
             onClick={() => {
@@ -20,8 +20,19 @@ function BasicPageTamplate({ children, goTo = 'Back' }) {
             <ArrowLeftRoundedIcon />
             {goTo}
           </Button>
-          {children}
+          {home && (
+            <Button
+              size="small"
+              sx={{ float: 'right' }}
+              onClick={() => {
+                navigate('/')
+              }}
+            >
+              home
+            </Button>
+          )}
         </Box>
+        {children}
       </Container>
     </>
   )
