@@ -52,11 +52,11 @@ function ProjectDetailsPage() {
       {loading ? (
         <PageLoader />
       ) : (
-        <BasicPageTamplate>
+        <BasicPageTamplate home={true}>
           {currentProject ? (
-            <Grid container spacing={3} direction="column" alignItems="center">
+            <Grid container spacing={4} direction="column" alignItems="center">
               {!!canEditProject && (
-                <Grid item container direction="column" alignItems="end">
+                <Grid item container direction="column" alignItems="center">
                   <Tooltip title={`Edit ${currentProject.name.toUpperCase()}`}>
                     <IconButton
                       aria-label="edit projet"
@@ -72,6 +72,7 @@ function ProjectDetailsPage() {
                 </Grid>
               )}
               <ProjectTitleComponent name={currentProject.name.toUpperCase()} />
+
               <ProjectDescriptionComponent
                 description={currentProject.description}
                 imgUrl={currentProject.imgUrl}

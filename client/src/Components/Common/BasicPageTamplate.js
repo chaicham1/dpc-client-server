@@ -10,7 +10,7 @@ function BasicPageTamplate({ children, goTo = 'Back', home = false }) {
   return (
     <>
       <Container pb={5}>
-        <Box pt={5}>
+        <Box pt={3}>
           <Button
             size="small"
             onClick={() => {

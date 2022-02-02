@@ -52,7 +52,7 @@ function LoginPage() {
   }
 
   return (
-    <BasicPageTamplate>
+    <BasicPageTamplate home={true}>
       <form onSubmit={handleFromSubmit}>
         <Grid container spacing={5} justifyContent="center" textAlign="center">
           <Grid xs={12} item container justifyContent="center">

@@ -7,8 +7,9 @@ const projectsReducer = (
     projects: projects,
     amdocsProductsList: amdocsProductsList,
     developmentTechnologiesList: developmentTechnologiesList,
-    admins: admins.length > 0 && admins.map(({ password, ...other }) => other),
-    logedInUser: { _id: 1, name: 'Nir', isMaster: true },
+    // admins: admins.length > 0 && admins.map(({ password, ...other }) => other), - no passwords
+    admins: admins.length > 0 && admins,
+    logedInUser: { _id: 2, name: 'Nir', isMaster: false },
   },
   action
 ) => {
