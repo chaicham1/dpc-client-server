@@ -24,7 +24,7 @@ function AdminPage() {
         <Grid xs={12} item container justifyContent="center">
           <AdminPanelSettingsTwoToneIcon color="primary" fontSize="large" />
           <Typography variant="h4" component="div">
-            &nbsp;Hello Master
+            &nbsp; Hello Master
           </Typography>
         </Grid>
         <Grid xs={12} item container justifyContent="left">
