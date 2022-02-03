@@ -95,12 +95,14 @@ function CreateNewTechnologieModal({
                   />
                 </Grid>
                 <Grid sm={6} item container justifyContent={'center'}>
-                  <Paper
-                    component="img"
-                    src={newTechnologieImgUrl}
-                    alt={'Paste image url to preview image'}
-                    sx={{ maxHeight: 100, borderRadius: 2 }}
-                  ></Paper>
+                  {newTechnologieImgUrl && (
+                    <Paper
+                      component="img"
+                      src={newTechnologieImgUrl}
+                      alt={newTechnologieImgUrl}
+                      sx={{ maxHeight: 100, borderRadius: 2 }}
+                    ></Paper>
+                  )}
                 </Grid>
               </Grid>
               <Grid xs={12} item container mb={5}>

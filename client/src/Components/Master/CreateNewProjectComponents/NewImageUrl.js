@@ -16,13 +16,16 @@ function NewImageUrl({ newImageUrl, newProjectImageUrlHandler }) {
           onChangeCapture={newProjectImageUrlHandler}
         />
       </Grid>
+
       <Grid sm={6} item container justifyContent={'center'}>
-        <Paper
-          component="img"
-          src={newImageUrl}
-          alt={'Paste image url to preview image'}
-          sx={{ maxHeight: 100, borderRadius: 2 }}
-        ></Paper>
+        {newImageUrl && (
+          <Paper
+            component="img"
+            src={newImageUrl}
+            alt={newImageUrl}
+            sx={{ maxHeight: 100, borderRadius: 2 }}
+          ></Paper>
+        )}
       </Grid>
     </Grid>
   )

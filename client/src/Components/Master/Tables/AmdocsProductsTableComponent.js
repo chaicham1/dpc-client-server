@@ -137,16 +137,15 @@ function AmdocsProductsTableComponent() {
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Amdocs Products
       </Typography>
+
       <Paper sx={{ width: '100%' }}>
         <TableContainer sx={{ maxHeight: 1000 }}>
           <Table aria-label=" table">
             <TableHead>
               <TableRow>
-                <TableCell align="left" width={50}>
-                  Image
-                </TableCell>
-                <TableCell align="left">Name</TableCell>
-                <TableCell align="left">Description</TableCell>
+                <TableCell align="left" width={100}></TableCell>
+                <TableCell align="left"></TableCell>
+                <TableCell align="left"></TableCell>
                 <TableCell align="right">
                   <Tooltip title="Add New Amdocs Product">
                     <IconButton

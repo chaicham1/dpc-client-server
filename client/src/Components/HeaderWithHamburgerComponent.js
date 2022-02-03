@@ -26,14 +26,13 @@ function HeaderWithHamburgerComponent({
   themeSwitchHandler,
   isDarkTheme,
 }) {
-  const projectsArrSearch = projects ? projects.map((p) => p.name.toUpperCase()) : []
-
   const navigate = useNavigate()
 
   const textColor = '#fff'
   const bgColor = isDarkTheme ? '#1565c0' : '#1e88e5'
 
   const [anchorElNav, setAnchorElNav] = useState(false)
+  const [resetSearchValue, setResetSearchValue] = useState(false)
 
   const handleNavMenu = () => {
     setAnchorElNav(!anchorElNav)
@@ -45,15 +44,26 @@ function HeaderWithHamburgerComponent({
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Box sx={{ flexGrow: 5, display: 'flex', justifyContent: 'flex-start' }}>
-              <Typography variant="h6" noWrap component="div">
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{
+                  cursor: 'pointer',
+                }}
+                onClick={() => {
+                  searchHandler(null)
+                  setResetSearchValue(!resetSearchValue)
+                }}
+              >
                 Digital Catalog
               </Typography>
             </Box>
             <Box sx={{ flexGrow: 5, display: 'flex', justifyContent: 'center' }}>
               <SearchProjectsComponnent
-                projectsArrSearch={projectsArrSearch}
                 searchHandler={searchHandler}
                 textColor={textColor}
+                resetValue={resetSearchValue}
               />
             </Box>
             <Box sx={{ flexGrow: 5, display: 'flex', justifyContent: 'flex-end' }}>
@@ -106,9 +116,9 @@ function HeaderWithHamburgerComponent({
           <List>
             <ListItem>
               <SearchProjectsComponnent
-                projectsArrSearch={projectsArrSearch}
                 searchHandler={searchHandler}
                 textColor={textColor}
+                resetValue={resetSearchValue}
               />
             </ListItem>
             <ListItem>

@@ -23,7 +23,7 @@ function ProjectCardComponent({ name, imgUrl, description }) {
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary" textAlign="center">
-            {description.slice(0, 60)}...
+            {description?.slice(0, 60)}...
           </Typography>
         </CardContent>
       </CardActionArea>

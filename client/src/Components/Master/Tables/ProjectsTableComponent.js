@@ -146,18 +146,15 @@ function ProjectsTableComponent() {
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Projects
       </Typography>
+
       <Paper sx={{ width: '100%' }}>
         <TableContainer sx={{ maxHeight: 1000 }}>
           <Table aria-label=" table">
             <TableHead>
               <TableRow>
-                <TableCell width={150}>Name</TableCell>
-                <TableCell align="left" width={100}>
-                  Image
-                </TableCell>
-                <TableCell align="left" sx={{ minWidth: 500 }}>
-                  Description
-                </TableCell>
+                <TableCell width={150}></TableCell>
+                <TableCell align="left" width={100}></TableCell>
+                <TableCell align="left" sx={{ minWidth: 500 }}></TableCell>
                 <TableCell align="right">
                   <Tooltip title="Add New Project">
                     <IconButton

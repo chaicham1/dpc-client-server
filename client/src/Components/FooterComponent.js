@@ -16,13 +16,15 @@ function FooterComponent() {
   return (
     <div
       style={{
+        marginTop: -100,
         position: 'relative',
         textAlign: 'center',
         zIndex: -1,
         bottom: 0,
+        width: '100%',
       }}
     >
-      <Lottie options={wavesBackgroundOptions} height={200} />
+      <Lottie options={wavesBackgroundOptions} height={100} speed={0.5} />
       <Typography
         gutterBottom
         variant="p"

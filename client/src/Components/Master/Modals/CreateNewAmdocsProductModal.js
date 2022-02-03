@@ -101,12 +101,14 @@ function CreateNewAmdocsProductModal({
                   />
                 </Grid>
                 <Grid sm={6} item container justifyContent={'center'}>
-                  <Paper
-                    component="img"
-                    src={newAmdocsProductImgUrl}
-                    alt={'Paste image url to preview image'}
-                    sx={{ maxHeight: 100, borderRadius: 2 }}
-                  ></Paper>
+                  {newAmdocsProductImgUrl && (
+                    <Paper
+                      component="img"
+                      src={newAmdocsProductImgUrl}
+                      alt={newAmdocsProductImgUrl}
+                      sx={{ maxHeight: 100, borderRadius: 2 }}
+                    ></Paper>
+                  )}
                 </Grid>
               </Grid>
               <Grid xs={12} item container>

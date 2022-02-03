@@ -134,6 +134,7 @@ function AdminsTableComponent() {
       <Typography variant="h6" component="div" gutterBottom textAlign="left">
         Admins
       </Typography>
+
       <Paper sx={{ width: '100%' }}>
         <TableContainer sx={{ maxHeight: 1000 }}>
           <Table aria-label=" table">
