@@ -43,7 +43,7 @@ function ProjectsCatalogPage({ themeSwitchHandler, isDarkTheme }) {
             isDarkTheme={isDarkTheme}
           />
           <Container>
-            <Box pt={5} mb={0}>
+            <Box pt={5} mb={0} minHeight={'100vh'}>
               <Grid container spacing={2} justifyContent="center">
                 {projects &&
                   !searchProject &&

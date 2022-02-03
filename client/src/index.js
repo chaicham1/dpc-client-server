@@ -15,7 +15,6 @@ ReactDOM.render(
       <App />
     </Router>
     <FooterComponent />
-
   </Provider>,
   document.getElementById('root')
 )

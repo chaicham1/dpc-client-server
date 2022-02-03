@@ -20,10 +20,9 @@ function FooterComponent() {
         textAlign: 'center',
         zIndex: -1,
         bottom: 0,
-        minHeight: '200px',
       }}
     >
-      <Lottie options={wavesBackgroundOptions} height={400} />
+      <Lottie options={wavesBackgroundOptions} height={200} />
       <Typography
         gutterBottom
         variant="p"
@@ -34,7 +33,7 @@ function FooterComponent() {
           left: '50%',
           transform: 'translate(-50%, -50%)',
           width: '100%',
-          fontSize: '14px',
+          fontSize: '16px',
           fontWeight: '300',
           color: 'white',
         }}

@@ -9,7 +9,7 @@ function BasicPageTamplate({ children, goTo = 'Back', home = false }) {
   const navigate = useNavigate()
   return (
     <>
-      <Container pb={5}>
+      <Container sx={{ minHeight: '100vh', paddingBottom: 5 }}>
         <Box pt={3}>
           <Button
             size="small"
