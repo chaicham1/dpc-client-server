@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
-import { Grid, IconButton, Tooltip } from '@mui/material'
+import { Alert, AlertTitle, Grid, IconButton, Tooltip } from '@mui/material'
 
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone'
 
@@ -16,19 +16,23 @@ import ProjectTitleComponent from '../Components/ProjectTitleComponent'
 import ProjectDescriptionComponent from '../Components/ProjectDescriptionComponent'
 import PageLoader from '../Components/Common/PageLoader'
 import BasicPageTamplate from '../Components/Common/BasicPageTamplate'
+import EditProjectModal from '../Components/Master/Modals/EditProjectModal'
 
 function ProjectDetailsPage() {
-  //TODO: Check if project name exist, it not put message to user and button to redirect to homepage
   const projects = useSelector((state) => state.projects)
   const logedInUser = useSelector((state) => state.logedInUser)
 
   const [loading, setLoading] = useState(true)
+
+  const [openCreateProjectDialog, setOpenCreateProjectDialog] = useState(false)
+  const [showCreateNewProjectSuccessMessage, setCreateNewProjectSuccessMessage] = useState(false)
 
   const { id } = useParams() //get project name from url
 
   const currentProject = projects?.find((p) => {
     return p.name.toUpperCase() === id.toUpperCase()
   })
+
   const canEditProject =
     (logedInUser &&
       currentProject &&
@@ -47,6 +51,20 @@ function ProjectDetailsPage() {
     }
   }, [projects])
 
+  const addProjectHandler = (newProject) => {
+    console.log(newProject)
+    handleCreateProjectClose()
+    setCreateNewProjectSuccessMessage(true)
+  }
+
+  const handleCreateProjectOpen = () => {
+    setOpenCreateProjectDialog(true)
+  }
+
+  const handleCreateProjectClose = () => {
+    setOpenCreateProjectDialog(false)
+  }
+
   return (
     <>
       {loading ? (
@@ -62,13 +80,25 @@ function ProjectDetailsPage() {
                       aria-label="edit projet"
                       size="small"
                       color="warning"
-                      onClick={() => {
-                        console.log('edit ' + currentProject.name.toUpperCase())
-                      }}
+                      onClick={handleCreateProjectOpen}
                     >
                       <EditTwoToneIcon />
                     </IconButton>
                   </Tooltip>
+                </Grid>
+              )}
+              {showCreateNewProjectSuccessMessage && (
+                <Grid xs={12} item container justifyContent="center">
+                  <Alert
+                    severity="success"
+                    sx={{ width: '100%', textAlign: 'left' }}
+                    onClose={() => {
+                      setCreateNewProjectSuccessMessage(false)
+                    }}
+                  >
+                    <AlertTitle>Success</AlertTitle>
+                    {currentProject.name.toUpperCase()} Edited Succesfully
+                  </Alert>
                 </Grid>
               )}
               <ProjectTitleComponent name={currentProject.name.toUpperCase()} />
@@ -87,6 +117,15 @@ function ProjectDetailsPage() {
             <Error message={`Unable to find project name: ${id}`} />
           )}
         </BasicPageTamplate>
+      )}
+      {openCreateProjectDialog && (
+        <EditProjectModal
+          addProjectHandler={addProjectHandler}
+          handleCreateProjectClose={handleCreateProjectClose}
+          openCreateProjectDialog={openCreateProjectDialog}
+          currentProject={currentProject}
+          isMaster={logedInUser.isMaster}
+        />
       )}
     </>
   )

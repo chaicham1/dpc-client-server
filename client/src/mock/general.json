@@ -11,6 +11,16 @@
       "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
     },
     {
+      "imgUrl": "https://w7.pngwing.com/pngs/847/140/png-transparent-internet-of-things-world-2018-world-s-largest-iot-event-iot-world-technology-technology-internet-of-things-world-iot-thumbnail.png",
+      "title": "IoT",
+      "description": "Turn technology into business by connecting to your customers, device manufacturers and the greater IoT ecosystem – including SIM & eSIM vendors, global online players, and device & connectivity management players. In the home, redefine the broadband and Wi-Fi experience with engaging, personalized and efficient capabilities that empower your customers."
+    },
+    {
+      "imgUrl": "https://www.invensislearning.com/blog/wp-content/uploads/2021/07/composition-of-service-catalogue.png",
+      "title": "Catalog Management",
+      "description": "Provide consumer, business and enterprise customers with rich, innovative offerings by bundling connectivity with your own advanced digital services."
+    },
+    {
       "imgUrl": "https://store-images.s-microsoft.com/image/apps.46167.13510798885266905.20cc1336-1464-4b14-b123-bcaa3e65ed2f.12066d18-4493-440e-b6df-502ca9ed9a46?mode=scale&q=90&h=270&w=270&background=%230078D7",
       "title": "amdocs360",
       "description": "In an era where new technologies are born every minute, and the demand for meaningful digital experiences has never been so intense, we unlock our customers’ innovative potential, empowering them to transform their boldest ideas into reality, and make billions of people feel like VIPs."
@@ -31,6 +41,14 @@
       "imgUrl": "https://nodejs.org/static/images/logo.svg"
     },
     {
+      "title": "Java Spring",
+      "imgUrl": "https://spring.io/images/OG-Spring.png"
+    },
+    {
+      "title": "Python",
+      "imgUrl": "https://gladwinlewis.co.il/wp-content/uploads/2021/04/1024px-Python-logo-notext.svg_.png"
+    },
+    {
       "title": "mongoDB",
       "imgUrl": "https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png"
     }
@@ -46,6 +64,18 @@
     {
       "_id": 2,
       "username": "test",
+      "password": "12345678",
+      "isMaster": false
+    },
+    {
+      "_id": 3,
+      "username": "bibi",
+      "password": "12345678",
+      "isMaster": false
+    },
+    {
+      "_id": 4,
+      "username": "zozo",
       "password": "12345678",
       "isMaster": false
     }
