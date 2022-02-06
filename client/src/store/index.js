@@ -7,8 +7,8 @@ const projectsReducer = (
     projects: projects.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0)),
     amdocsProductsList: amdocsProductsList,
     developmentTechnologiesList: developmentTechnologiesList,
-    // admins: admins.length > 0 && admins.map(({ password, ...other }) => other), - no passwords
-    admins: admins.length > 0 && admins,
+    admins: admins.length > 0 && admins.map(({ password, ...other }) => other),
+    // admins: admins.length > 0 && admins,
     logedInUser: { _id: 2, name: 'Nir', isMaster: true },
   },
   action

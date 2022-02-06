@@ -82,6 +82,7 @@ function NewLinks({
                             component="a"
                             gutterBottom
                             textAlign="left"
+                            color={'primary'}
                             href={link.url}
                             target="_blank"
                           >

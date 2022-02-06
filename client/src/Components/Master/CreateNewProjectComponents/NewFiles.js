@@ -82,6 +82,7 @@ function NewFiles({
                             component="a"
                             gutterBottom
                             textAlign="left"
+                            color={'primary'}
                             href={file.downloadUrl}
                             download
                           >

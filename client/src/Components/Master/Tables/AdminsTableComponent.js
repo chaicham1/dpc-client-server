@@ -94,7 +94,7 @@ function AdminsTableComponent() {
         <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
           <TableCell align="left">{admin._id}</TableCell>
           <TableCell align="left">{admin.username}</TableCell>
-          <TableCell align="left">{admin.password}</TableCell>
+          {/* <TableCell align="left">{admin.password}</TableCell> */}
           <TableCell align="left">{admin.isMaster ? 'YES' : 'NO'}</TableCell>
           <TableCell component="th" scope="row" align="right">
             {!admin.isMaster && (
@@ -142,7 +142,7 @@ function AdminsTableComponent() {
               <TableRow>
                 <TableCell align="left">ID</TableCell>
                 <TableCell align="left">USERNAME</TableCell>
-                <TableCell align="left">PASSWORD</TableCell>
+                {/* <TableCell align="left">PASSWORD</TableCell> */}
                 <TableCell align="left">MASTER</TableCell>
                 <TableCell align="right">
                   <Tooltip title="Add New Admin">

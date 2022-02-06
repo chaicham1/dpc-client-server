@@ -12,8 +12,9 @@ import {
   List,
   ListItem,
 } from '@mui/material'
-import Brightness4RoundedIcon from '@mui/icons-material/Brightness4Rounded'
-import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded'
+
+import NightlightTwoToneIcon from '@mui/icons-material/NightlightTwoTone'
+import LightModeTwoToneIcon from '@mui/icons-material/LightModeTwoTone'
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded'
 
 import { Squash as Hamburger } from 'hamburger-react'
@@ -21,7 +22,7 @@ import { Squash as Hamburger } from 'hamburger-react'
 import SearchProjectsComponnent from './SearchProjectsComponnent'
 
 function HeaderWithHamburgerComponent({
-  projects,
+  // projects,
   searchHandler,
   themeSwitchHandler,
   isDarkTheme,
@@ -32,10 +33,12 @@ function HeaderWithHamburgerComponent({
   const bgColor = isDarkTheme ? '#1565c0' : '#1e88e5'
 
   const [anchorElNav, setAnchorElNav] = useState(false)
+  const [burgerNav, setBurgerNav] = useState(false)
   const [resetSearchValue, setResetSearchValue] = useState(false)
 
   const handleNavMenu = () => {
     setAnchorElNav(!anchorElNav)
+    setBurgerNav(!burgerNav)
   }
 
   return (
@@ -68,7 +71,7 @@ function HeaderWithHamburgerComponent({
             </Box>
             <Box sx={{ flexGrow: 5, display: 'flex', justifyContent: 'flex-end' }}>
               <IconButton onClick={themeSwitchHandler} color="inherit">
-                {isDarkTheme ? <Brightness4RoundedIcon /> : <Brightness7RoundedIcon />}
+                {isDarkTheme ? <NightlightTwoToneIcon /> : <LightModeTwoToneIcon />}
               </IconButton>
               <IconButton
                 onClick={() => {
@@ -82,7 +85,7 @@ function HeaderWithHamburgerComponent({
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <Hamburger
-              toggled={anchorElNav}
+              toggled={burgerNav}
               toggle={handleNavMenu}
               size={20}
               duration={0.2}
@@ -92,7 +95,11 @@ function HeaderWithHamburgerComponent({
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, cursor: 'pointer' }}
+            onClick={() => {
+              searchHandler(null)
+              setResetSearchValue(!resetSearchValue)
+            }}
           >
             Digital Catalog
           </Typography>
@@ -123,7 +130,7 @@ function HeaderWithHamburgerComponent({
             </ListItem>
             <ListItem>
               <IconButton onClick={themeSwitchHandler} color="inherit">
-                {isDarkTheme ? <Brightness4RoundedIcon /> : <Brightness7RoundedIcon />}
+                {isDarkTheme ? <NightlightTwoToneIcon /> : <LightModeTwoToneIcon />}
               </IconButton>
             </ListItem>
           </List>
